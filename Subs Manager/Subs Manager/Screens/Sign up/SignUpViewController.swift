@@ -21,6 +21,10 @@ class SignUpViewController: UIViewController, UIScrollViewDelegate {
         setUpScrollView()
     }
 
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        pageControl.currentPage = Int(scrollView.contentOffset.x / CGFloat(414))
+    }
+
     private func setUpScrollView() {
         scrollView.delegate = self
         scrollView.isPagingEnabled = true
@@ -33,11 +37,8 @@ class SignUpViewController: UIViewController, UIScrollViewDelegate {
             greetingView.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height)
             signUpView.frame = CGRect(x: xCoordinate, y: 0, width: view.frame.size.width, height: view.frame.size.height)
         }
+        
         scrollView.contentSize = CGSize(width: contentWidth, height: view.frame.height)
-    }
-
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        pageControl.currentPage = Int(scrollView.contentOffset.x / CGFloat(414))
     }
 }
 

@@ -12,6 +12,7 @@ class SignUpView: UIView {
     let kCONTENT_XIB_NAME = "SignUpView"
     @IBOutlet weak var signUpView: UIView!
 
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -20,6 +21,14 @@ class SignUpView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
+    }
+
+    @IBAction func tappedGetOneButton(_ sender: UIButton) {
+
+    }
+
+    @IBAction func tappedSignInButton(_ sender: UIButton) {
+
     }
 
     func commonInit() {
