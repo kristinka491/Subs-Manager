@@ -16,17 +16,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uoV-Bi-rsx">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uoV-Bi-rsx">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </scrollView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="dVO-iR-WSH">
-                                <rect key="frame" x="158.5" y="806" width="97.5" height="40"/>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="dVO-iR-WSH">
+                                <rect key="frame" x="158.5" y="812" width="97.5" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="Od2-Dm-1Vx"/>
                                     <constraint firstAttribute="height" constant="40" id="btA-7Z-Oad"/>
                                 </constraints>
                                 <color key="pageIndicatorTintColor" red="0.90994554760000002" green="0.89304673670000001" blue="0.9509055018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="currentPageIndicatorTintColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.98900773789999996" green="0.57903343460000001" blue="0.0072032874080000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -34,12 +34,16 @@
                         <constraints>
                             <constraint firstItem="uoV-Bi-rsx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="HMj-q0-IXD"/>
                             <constraint firstItem="dVO-iR-WSH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fxS-GB-ose"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dVO-iR-WSH" secondAttribute="bottom" constant="16" id="mFC-XO-g8l"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dVO-iR-WSH" secondAttribute="bottom" constant="10" id="mFC-XO-g8l"/>
                             <constraint firstItem="uoV-Bi-rsx" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ng8-BY-fVY"/>
                             <constraint firstAttribute="bottom" secondItem="uoV-Bi-rsx" secondAttribute="bottom" id="noc-rV-F6a"/>
                             <constraint firstItem="uoV-Bi-rsx" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="wjW-I6-HVG"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pageControl" destination="dVO-iR-WSH" id="hz3-i4-O0o"/>
+                        <outlet property="scrollView" destination="uoV-Bi-rsx" id="xHX-CO-heg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

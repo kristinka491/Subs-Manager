@@ -9,7 +9,7 @@ import UIKit
 
 class SignUpView: UIView {
 
-    let kCONTENT_XIB_NAME = "PersonView"
+    let kCONTENT_XIB_NAME = "SignUpView"
     @IBOutlet weak var signUpView: UIView!
 
     override init(frame: CGRect) {

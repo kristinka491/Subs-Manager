@@ -8,7 +8,7 @@
 import UIKit
 
 class GreetingView: UIView {
-    let kCONTENT_XIB_NAME = "PersonView"
+    let kCONTENT_XIB_NAME = "GreetingView"
 
     @IBOutlet weak var greetingView: UIView!
 
