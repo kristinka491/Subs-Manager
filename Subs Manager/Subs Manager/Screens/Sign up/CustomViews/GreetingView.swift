@@ -9,6 +9,7 @@ import UIKit
 
 class GreetingView: UIView {
     let kCONTENT_XIB_NAME = "PersonView"
+
     @IBOutlet weak var greetingView: UIView!
 
     override init(frame: CGRect) {
@@ -23,7 +24,7 @@ class GreetingView: UIView {
 
     func commonInit() {
         Bundle.main.loadNibNamed(kCONTENT_XIB_NAME, owner: self, options: nil)
-        contentView.setUpGreetingView(self)
+        greetingView.setUpGreetingView(self)
     }
 }
 
