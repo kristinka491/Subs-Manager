@@ -1,1 +1,1 @@
-# Subs-Manager
+# Subs Manager
