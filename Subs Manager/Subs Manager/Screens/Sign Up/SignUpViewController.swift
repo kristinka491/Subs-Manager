@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignUpViewController: SetUpKeyboardViewController {
+class SignUpViewController: SetUpKeyboardViewController, UITextFieldDelegate {
 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var loginTextField: UITextField!
@@ -15,6 +15,13 @@ class SignUpViewController: SetUpKeyboardViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        let isUserRegistered = RealmDataStore.shared.isUserRegistered(with: loginTextField.text ?? "")
+        if textField == loginTextField && isUserRegistered {
+            showAlert(alertText: "Sorry", alertMessage: "Unfortunately, this login is busy", completion: nil)
+        }
     }
 
     private var isNotEmpty: Bool {
@@ -36,11 +43,15 @@ class SignUpViewController: SetUpKeyboardViewController {
     @IBAction private func tappedCreateAccountButton() {
         if isNotEmpty {
             registerUser()
-            showAlert(alertText: "Thank you!", alertMessage: "Registration is successful.") { [weak self] in
+            showAlert(alertText: "Thank you!", alertMessage: "Account was created.") { [weak self] in
                 self?.navigationController?.popViewController(animated: true)
         }} else {
             showAlert(alertText: "Error", alertMessage: "Please fill in all the forms", completion: nil)
         }
+    }
+
+    @IBAction private func tappedBackButton() {
+        self.navigationController?.popViewController(animated: true)
     }
 
     private func registerUser() {
@@ -48,7 +59,9 @@ class SignUpViewController: SetUpKeyboardViewController {
             login: loginTextField.text ?? "",
             password: passwordTextField.text ?? "")
         if !isUserSaved {
-            showAlert(alertText: "Something went wrong", alertMessage: "This user is already signed in", completion: nil)
+            showAlert(alertText: "Something went wrong", alertMessage: "This user is already signed up") { [weak self] in
+                self?.navigationController?.popViewController(animated: true)
+            }
         }
     }
 }

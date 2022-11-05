@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SIGN UP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ez-yh-qu2">
-                                <rect key="frame" x="50" y="70" width="314" height="45"/>
+                                <rect key="frame" x="50" y="89" width="314" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="CXY-eP-Jra"/>
                                 </constraints>
@@ -26,47 +26,50 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nameIcon" translatesAutoresizingMaskIntoConstraints="NO" id="2QY-jm-nhN">
-                                <rect key="frame" x="50" y="145" width="20" height="20"/>
+                                <rect key="frame" x="50" y="164" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="71K-BG-EgK"/>
                                     <constraint firstAttribute="width" secondItem="2QY-jm-nhN" secondAttribute="height" multiplier="1:1" id="Xp7-0f-tnO"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="MQW-5G-I9y">
-                                <rect key="frame" x="85" y="145" width="279" height="20"/>
+                                <rect key="frame" x="85" y="164" width="279" height="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" textContentType="name"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sTM-Sw-vdM">
-                                <rect key="frame" x="50" y="180" width="314" height="1"/>
+                                <rect key="frame" x="50" y="199" width="314" height="1"/>
                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="dcR-NH-Lo1"/>
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginIcon" translatesAutoresizingMaskIntoConstraints="NO" id="ab9-eO-jCA">
-                                <rect key="frame" x="50" y="201" width="20" height="20"/>
+                                <rect key="frame" x="50" y="220" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ab9-eO-jCA" secondAttribute="height" multiplier="1:1" id="HQ9-G4-elf"/>
                                     <constraint firstAttribute="height" constant="20" id="WBh-l5-guk"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="login" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ACy-ei-3N9">
-                                <rect key="frame" x="85" y="201" width="279" height="20"/>
+                                <rect key="frame" x="85" y="220" width="279" height="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="username"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="D6a-1x-qfm"/>
+                                </connections>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hea-Ch-KO9">
-                                <rect key="frame" x="50" y="236" width="314" height="1"/>
+                                <rect key="frame" x="50" y="255" width="314" height="1"/>
                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="wT6-UF-Uwk"/>
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="passwordIcon" translatesAutoresizingMaskIntoConstraints="NO" id="HxA-lm-Fda">
-                                <rect key="frame" x="50" y="257" width="20" height="20"/>
+                                <rect key="frame" x="50" y="276" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="Mzt-NN-SHH"/>
                                     <constraint firstAttribute="width" secondItem="HxA-lm-Fda" secondAttribute="height" multiplier="1:1" id="OFS-L5-I3n"/>
@@ -75,20 +78,20 @@
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="VJt-W8-9QI">
-                                <rect key="frame" x="85" y="257" width="279" height="20"/>
+                                <rect key="frame" x="85" y="276" width="279" height="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="password"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ihx-FX-zzB">
-                                <rect key="frame" x="50" y="292" width="314" height="1"/>
+                                <rect key="frame" x="50" y="311" width="314" height="1"/>
                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="eg7-Fi-Ush"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BwE-xt-2Gd">
-                                <rect key="frame" x="50" y="323" width="314" height="40"/>
+                                <rect key="frame" x="50" y="342" width="314" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="RkR-hC-eqY"/>
                                 </constraints>
@@ -103,12 +106,27 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="registrationScreen" translatesAutoresizingMaskIntoConstraints="NO" id="4xJ-m2-sw5">
-                                <rect key="frame" x="0.0" y="393" width="414" height="414"/>
+                                <rect key="frame" x="0.0" y="412" width="414" height="414"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="4xJ-m2-sw5" secondAttribute="height" multiplier="1:1" id="m0V-i5-MKn"/>
                                     <constraint firstAttribute="width" constant="414" id="pwE-SO-3WC"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q6z-j3-Cxq">
+                                <rect key="frame" x="20" y="54" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="R11-JU-h6Q"/>
+                                    <constraint firstAttribute="width" secondItem="Q6z-j3-Cxq" secondAttribute="height" multiplier="1:1" id="s0Y-aC-DXp"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="back">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="tappedBackButton" destination="Y6W-OH-hqX" eventType="touchUpInside" id="r3X-we-gxE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -124,15 +142,17 @@
                             <constraint firstItem="2QY-jm-nhN" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="50" id="C3C-dx-BDt"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="4xJ-m2-sw5" secondAttribute="trailing" id="EJC-iO-bQ4"/>
                             <constraint firstItem="ACy-ei-3N9" firstAttribute="height" secondItem="ab9-eO-jCA" secondAttribute="height" id="Fkm-cZ-5dE"/>
+                            <constraint firstItem="Q6z-j3-Cxq" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="H8m-5y-XlL"/>
                             <constraint firstItem="VJt-W8-9QI" firstAttribute="height" secondItem="HxA-lm-Fda" secondAttribute="height" id="ISM-oW-obp"/>
                             <constraint firstItem="ACy-ei-3N9" firstAttribute="top" secondItem="ab9-eO-jCA" secondAttribute="top" id="JBh-iu-EjT"/>
                             <constraint firstItem="Hea-Ch-KO9" firstAttribute="top" secondItem="ab9-eO-jCA" secondAttribute="bottom" constant="15" id="Nki-2T-KYc"/>
                             <constraint firstItem="4ez-yh-qu2" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="50" id="POF-Nc-JcL"/>
+                            <constraint firstItem="4ez-yh-qu2" firstAttribute="top" secondItem="Q6z-j3-Cxq" secondAttribute="bottom" constant="5" id="TsE-gS-5kX"/>
                             <constraint firstItem="MQW-5G-I9y" firstAttribute="centerY" secondItem="2QY-jm-nhN" secondAttribute="centerY" id="UL9-UK-DXv"/>
                             <constraint firstItem="MQW-5G-I9y" firstAttribute="height" secondItem="2QY-jm-nhN" secondAttribute="height" id="Uew-7s-EcX"/>
                             <constraint firstItem="ab9-eO-jCA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="50" id="Vc3-WH-eWE"/>
                             <constraint firstItem="ACy-ei-3N9" firstAttribute="bottom" secondItem="ab9-eO-jCA" secondAttribute="bottom" id="Vej-Fe-rod"/>
-                            <constraint firstItem="4ez-yh-qu2" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="26" id="Vuu-YU-XAw"/>
+                            <constraint firstItem="Q6z-j3-Cxq" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="VgK-q1-AZ0"/>
                             <constraint firstItem="HxA-lm-Fda" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="50" id="Woq-cB-wfO"/>
                             <constraint firstItem="MQW-5G-I9y" firstAttribute="leading" secondItem="2QY-jm-nhN" secondAttribute="trailing" constant="15" id="XQc-pe-SqS"/>
                             <constraint firstItem="VJt-W8-9QI" firstAttribute="trailing" secondItem="MQW-5G-I9y" secondAttribute="trailing" id="Xoi-nj-RAs"/>
@@ -167,10 +187,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1" y="-33"/>
+            <point key="canvasLocation" x="-1.4492753623188408" y="-33.482142857142854"/>
         </scene>
     </scenes>
     <resources>
+        <image name="back" width="256" height="256"/>
         <image name="loginIcon" width="256" height="256"/>
         <image name="nameIcon" width="256" height="256"/>
         <image name="passwordIcon" width="256" height="256"/>

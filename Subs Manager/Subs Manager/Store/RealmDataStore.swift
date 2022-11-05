@@ -37,7 +37,7 @@ class RealmDataStore {
         return nil
     }
 
-    private func isUserRegistered(with login: String) -> Bool {
+    func isUserRegistered(with login: String) -> Bool {
         return try! Realm().object(ofType: User.self,
                                    forPrimaryKey: login) != nil
     }
