@@ -98,6 +98,9 @@
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="baseBackgroundColor" red="0.98900773789999996" green="0.57903343460000001" blue="0.0072032874080000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="tappedCreateAccountButton" destination="Y6W-OH-hqX" eventType="touchUpInside" id="xJU-hv-YQT"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="registrationScreen" translatesAutoresizingMaskIntoConstraints="NO" id="4xJ-m2-sw5">
                                 <rect key="frame" x="0.0" y="393" width="414" height="414"/>
@@ -156,6 +159,11 @@
                             <constraint firstItem="sTM-Sw-vdM" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="50" id="zYy-ZE-pns"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginTextField" destination="ACy-ei-3N9" id="Q3s-Vv-DQ4"/>
+                        <outlet property="nameTextField" destination="MQW-5G-I9y" id="mWc-5t-SsA"/>
+                        <outlet property="passwordTextField" destination="VJt-W8-9QI" id="uzV-Ne-jxi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

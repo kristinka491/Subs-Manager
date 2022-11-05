@@ -32,4 +32,23 @@ class SignUpViewController: SetUpKeyboardViewController {
         }
         return false
     }
+
+    @IBAction private func tappedCreateAccountButton() {
+        if isNotEmpty {
+            registerUser()
+            showAlert(alertText: "Thank you!", alertMessage: "Registration is successful.") { [weak self] in
+                self?.navigationController?.popViewController(animated: true)
+        }} else {
+            showAlert(alertText: "Error", alertMessage: "Please fill in all the forms", completion: nil)
+        }
+    }
+
+    private func registerUser() {
+        let isUserSaved = RealmDataStore.shared.addUser(name: nameTextField.text ?? "",
+            login: loginTextField.text ?? "",
+            password: passwordTextField.text ?? "")
+        if !isUserSaved {
+            showAlert(alertText: "Something went wrong", alertMessage: "This user is already signed in", completion: nil)
+        }
+    }
 }
