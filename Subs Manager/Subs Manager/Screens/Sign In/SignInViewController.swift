@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignInViewController: UIViewController, UIScrollViewDelegate, MoveToAnotherScreenDelegate {
+class SignInViewController: SetUpKeyboardViewController, UIScrollViewDelegate, MoveToAnotherScreenDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!

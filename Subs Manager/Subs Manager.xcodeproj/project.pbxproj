@@ -19,6 +19,11 @@
 		8E4EB496291520C000633996 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4EB495291520C000633996 /* SignUpViewController.swift */; };
 		8E4EB499291520E400633996 /* SignUpScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E4EB498291520E400633996 /* SignUpScreen.storyboard */; };
 		8EE665152915295900A94599 /* SignInView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EE665142915295900A94599 /* SignInView.xib */; };
+		8EE6651A2916793800A94599 /* SubscriptionsScren.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EE665192916793800A94599 /* SubscriptionsScren.storyboard */; };
+		8EE6651C2916795300A94599 /* SubscriptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE6651B2916795300A94599 /* SubscriptionsViewController.swift */; };
+		8EE66522291679A100A94599 /* SubscriptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE66520291679A100A94599 /* SubscriptionCollectionViewCell.swift */; };
+		8EE66523291679A100A94599 /* SubscriptionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EE66521291679A100A94599 /* SubscriptionCollectionViewCell.xib */; };
+		8EE6652729167B0F00A94599 /* SetUpKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE6652629167B0F00A94599 /* SetUpKeyboardViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +41,11 @@
 		8E4EB495291520C000633996 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		8E4EB498291520E400633996 /* SignUpScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpScreen.storyboard; sourceTree = "<group>"; };
 		8EE665142915295900A94599 /* SignInView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignInView.xib; sourceTree = "<group>"; };
+		8EE665192916793800A94599 /* SubscriptionsScren.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SubscriptionsScren.storyboard; sourceTree = "<group>"; };
+		8EE6651B2916795300A94599 /* SubscriptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsViewController.swift; sourceTree = "<group>"; };
+		8EE66520291679A100A94599 /* SubscriptionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionCollectionViewCell.swift; sourceTree = "<group>"; };
+		8EE66521291679A100A94599 /* SubscriptionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubscriptionCollectionViewCell.xib; sourceTree = "<group>"; };
+		8EE6652629167B0F00A94599 /* SetUpKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpKeyboardViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +78,7 @@
 		8E2C64D02913CDC0001FD8C8 /* Subs Manager */ = {
 			isa = PBXGroup;
 			children = (
+				8EE6652429167A3400A94599 /* Helper */,
 				8E4EB48A2913DFDA00633996 /* Screens */,
 				8E4EB48B2913DFF000633996 /* App */,
 				8E2C64DA2913CDC5001FD8C8 /* Assets.xcassets */,
@@ -88,8 +99,10 @@
 		8E4EB48A2913DFDA00633996 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				8E4EB497291520C700633996 /* Sign Up */,
 				8E4EB4892913DF7100633996 /* Sign In */,
+				8E4EB497291520C700633996 /* Sign Up */,
+				8EE665182916790D00A94599 /* Subscriptions */,
+				8EE6652529167A3E00A94599 /* Base */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -123,6 +136,40 @@
 				8E4EB498291520E400633996 /* SignUpScreen.storyboard */,
 			);
 			path = "Sign Up";
+			sourceTree = "<group>";
+		};
+		8EE665182916790D00A94599 /* Subscriptions */ = {
+			isa = PBXGroup;
+			children = (
+				8EE6651D2916795900A94599 /* Cell */,
+				8EE665192916793800A94599 /* SubscriptionsScren.storyboard */,
+				8EE6651B2916795300A94599 /* SubscriptionsViewController.swift */,
+			);
+			path = Subscriptions;
+			sourceTree = "<group>";
+		};
+		8EE6651D2916795900A94599 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8EE66520291679A100A94599 /* SubscriptionCollectionViewCell.swift */,
+				8EE66521291679A100A94599 /* SubscriptionCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		8EE6652429167A3400A94599 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		8EE6652529167A3E00A94599 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				8EE6652629167B0F00A94599 /* SetUpKeyboardViewController.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,7 +233,9 @@
 				8E2C64DE2913CDC5001FD8C8 /* LaunchScreen.storyboard in Resources */,
 				8E4EB4922913ED2800633996 /* GreetingView.xib in Resources */,
 				8E2C64DB2913CDC5001FD8C8 /* Assets.xcassets in Resources */,
+				8EE66523291679A100A94599 /* SubscriptionCollectionViewCell.xib in Resources */,
 				8E4EB499291520E400633996 /* SignUpScreen.storyboard in Resources */,
+				8EE6651A2916793800A94599 /* SubscriptionsScren.storyboard in Resources */,
 				8E2C64D92913CDC0001FD8C8 /* SignInScreen.storyboard in Resources */,
 				8EE665152915295900A94599 /* SignInView.xib in Resources */,
 			);
@@ -202,9 +251,12 @@
 				8E4EB496291520C000633996 /* SignUpViewController.swift in Sources */,
 				8E2C64D62913CDC0001FD8C8 /* SignInViewController.swift in Sources */,
 				8E4EB4902913ED0A00633996 /* SignInView.swift in Sources */,
+				8EE66522291679A100A94599 /* SubscriptionCollectionViewCell.swift in Sources */,
 				8E4EB48E2913ECF400633996 /* GreetingView.swift in Sources */,
 				8E2C64D22913CDC0001FD8C8 /* AppDelegate.swift in Sources */,
 				8E2C64D42913CDC0001FD8C8 /* SceneDelegate.swift in Sources */,
+				8EE6651C2916795300A94599 /* SubscriptionsViewController.swift in Sources */,
+				8EE6652729167B0F00A94599 /* SetUpKeyboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
