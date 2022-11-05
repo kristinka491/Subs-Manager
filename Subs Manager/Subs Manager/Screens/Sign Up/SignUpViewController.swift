@@ -12,5 +12,5 @@ class SignUpViewController: SetUpKeyboardViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
 }
