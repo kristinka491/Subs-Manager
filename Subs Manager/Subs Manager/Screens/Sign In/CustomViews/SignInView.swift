@@ -15,8 +15,10 @@ class SignInView: UIView {
 
     @IBOutlet weak var signInView: UIView!
     @IBOutlet weak var getOneButton: UIButton!
+    @IBOutlet weak var rememberMeButton: UIButton!
 
     private weak var delegate: MoveToAnotherScreenDelegate?
+    private var buttonActive = false
     private let kCONTENT_XIB_NAME = "SignInView"
 
     override init(frame: CGRect) {
@@ -35,6 +37,15 @@ class SignInView: UIView {
 
     @IBAction func tappedSignInButton(_ sender: UIButton) {
 
+    }
+
+    @IBAction func tappedRememberMeButton(_ sender: UIButton) {
+        if buttonActive {
+            rememberMeButton.setImage(UIImage(named: "uncheck"), for: .normal)
+        } else {
+            rememberMeButton.setImage(UIImage(named: "check"), for: .normal)
+        }
+        buttonActive = !buttonActive
     }
 
     func setUpDelegate(delegate: MoveToAnotherScreenDelegate) {

@@ -12,7 +12,7 @@ class SignInViewController: UIViewController, UIScrollViewDelegate, MoveToAnothe
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
 
-    var contentWidth: CGFloat = 0.0
+    private var contentWidth: CGFloat = 0.0
     let greetingView = GreetingView()
     let signInView = SignInView()
 

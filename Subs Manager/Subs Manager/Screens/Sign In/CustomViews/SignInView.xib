@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignInView" customModule="Subs_Manager" customModuleProvider="target">
             <connections>
                 <outlet property="getOneButton" destination="3JX-vZ-7z1" id="SIe-4O-6QC"/>
+                <outlet property="rememberMeButton" destination="cb1-SZ-qS3" id="VE8-GW-Mao"/>
                 <outlet property="signInView" destination="iN0-l3-epB" id="57t-z1-sLG"/>
             </connections>
         </placeholder>
@@ -61,7 +62,7 @@
                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EgY-2p-kaO">
-                    <rect key="frame" x="50" y="347" width="314" height="40"/>
+                    <rect key="frame" x="50" y="357" width="314" height="40"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="K9o-EO-Pwc"/>
@@ -78,7 +79,7 @@
                     </connections>
                 </button>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signInView" translatesAutoresizingMaskIntoConstraints="NO" id="hMr-bT-sZU">
-                    <rect key="frame" x="0.0" y="407" width="414" height="489"/>
+                    <rect key="frame" x="0.0" y="417" width="414" height="479"/>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Qqn-KW-kcb">
                     <rect key="frame" x="50" y="190" width="20" height="20"/>
@@ -108,20 +109,28 @@
                         <constraint firstAttribute="height" constant="1" id="9y6-Iq-BK8"/>
                     </constraints>
                 </view>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uncheck" translatesAutoresizingMaskIntoConstraints="NO" id="03s-w6-ofp">
-                    <rect key="frame" x="50" y="307" width="20" height="20"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="03s-w6-ofp" secondAttribute="height" multiplier="1:1" id="iaA-g4-ZfZ"/>
-                        <constraint firstAttribute="height" constant="20" id="nOS-6m-dEc"/>
-                    </constraints>
-                </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gxs-m5-ZJu">
-                    <rect key="frame" x="72" y="307" width="113.5" height="20"/>
+                    <rect key="frame" x="72" y="298.5" width="113.5" height="27"/>
                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Remember me">
                         <fontDescription key="titleFontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="13"/>
                     </buttonConfiguration>
+                    <connections>
+                        <action selector="tappedRememberMeButton:" destination="-1" eventType="touchUpInside" id="L5V-it-59s"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cb1-SZ-qS3">
+                    <rect key="frame" x="50" y="302" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="OVz-64-XdT"/>
+                        <constraint firstAttribute="width" secondItem="cb1-SZ-qS3" secondAttribute="height" multiplier="1:1" id="dbG-Au-LlL"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Button" image="uncheck"/>
+                    <connections>
+                        <action selector="tappedRememberMeButton:" destination="-1" eventType="touchUpInside" id="EHB-Aq-tG2"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
@@ -132,40 +141,38 @@
                 <constraint firstItem="z5T-D9-5dR" firstAttribute="top" secondItem="KZZ-PE-ucf" secondAttribute="bottom" constant="10" id="2p3-Rb-Kjg"/>
                 <constraint firstItem="pe4-e9-NNO" firstAttribute="leading" secondItem="Qqn-KW-kcb" secondAttribute="trailing" constant="15" id="2tB-Vq-Cua"/>
                 <constraint firstItem="Qqn-KW-kcb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="50" id="672-0f-ErD"/>
-                <constraint firstItem="gxs-m5-ZJu" firstAttribute="top" secondItem="03s-w6-ofp" secondAttribute="top" id="85V-Dt-Lq2"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="KZZ-PE-ucf" secondAttribute="trailing" constant="50" id="8It-fj-ApI"/>
-                <constraint firstItem="gxs-m5-ZJu" firstAttribute="leading" secondItem="03s-w6-ofp" secondAttribute="trailing" constant="2" id="Cdy-WF-9Xz"/>
                 <constraint firstItem="xkP-pT-Bge" firstAttribute="top" secondItem="R9T-8h-erD" secondAttribute="bottom" constant="20" id="DOa-IE-yWb"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="hMr-bT-sZU" secondAttribute="trailing" id="EJy-GD-M68"/>
                 <constraint firstItem="xkP-pT-Bge" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="50" id="FjX-PC-yIU"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Giy-Pb-iZR" secondAttribute="trailing" constant="50" id="GbF-xv-Dcb"/>
-                <constraint firstItem="EgY-2p-kaO" firstAttribute="top" secondItem="03s-w6-ofp" secondAttribute="bottom" constant="20" id="GdB-Cs-bYf"/>
                 <constraint firstItem="KZZ-PE-ucf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="50" id="Iay-Cm-iNF"/>
                 <constraint firstItem="Giy-Pb-iZR" firstAttribute="leading" secondItem="R9T-8h-erD" secondAttribute="trailing" constant="15" id="JH0-Wd-UDy"/>
                 <constraint firstItem="hMr-bT-sZU" firstAttribute="top" secondItem="EgY-2p-kaO" secondAttribute="bottom" constant="20" id="JMv-pZ-jiV"/>
                 <constraint firstItem="R9T-8h-erD" firstAttribute="top" secondItem="KKN-Rj-2E5" secondAttribute="bottom" constant="20" id="KW6-jm-vnw"/>
-                <constraint firstItem="gxs-m5-ZJu" firstAttribute="centerY" secondItem="03s-w6-ofp" secondAttribute="centerY" id="KZV-PW-8Ne"/>
                 <constraint firstItem="KKN-Rj-2E5" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="50" id="Lye-h2-a0U"/>
                 <constraint firstItem="Giy-Pb-iZR" firstAttribute="bottom" secondItem="R9T-8h-erD" secondAttribute="bottom" id="MjK-31-0Co"/>
                 <constraint firstItem="3JX-vZ-7z1" firstAttribute="leading" secondItem="z5T-D9-5dR" secondAttribute="trailing" constant="15" id="Nj0-OX-xuR"/>
                 <constraint firstItem="hMr-bT-sZU" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="QBQ-dj-L7K"/>
                 <constraint firstItem="R9T-8h-erD" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="50" id="QXN-U7-Tb9"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="pe4-e9-NNO" secondAttribute="trailing" constant="50" id="QnY-zm-6EP"/>
+                <constraint firstItem="gxs-m5-ZJu" firstAttribute="centerY" secondItem="cb1-SZ-qS3" secondAttribute="centerY" id="Svn-x5-4Vt"/>
                 <constraint firstItem="pe4-e9-NNO" firstAttribute="bottom" secondItem="Qqn-KW-kcb" secondAttribute="bottom" id="U0F-zA-Ur4"/>
                 <constraint firstItem="3JX-vZ-7z1" firstAttribute="trailing" secondItem="pe4-e9-NNO" secondAttribute="trailing" id="VY5-o8-4Ox"/>
                 <constraint firstItem="3JX-vZ-7z1" firstAttribute="top" secondItem="KZZ-PE-ucf" secondAttribute="bottom" constant="16" id="Vvs-Pf-2m2"/>
                 <constraint firstItem="Giy-Pb-iZR" firstAttribute="centerY" secondItem="R9T-8h-erD" secondAttribute="centerY" id="WpQ-HQ-wds"/>
+                <constraint firstItem="cb1-SZ-qS3" firstAttribute="top" secondItem="xkP-pT-Bge" secondAttribute="bottom" constant="10" id="X7H-YZ-NcU"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="EgY-2p-kaO" secondAttribute="trailing" constant="50" id="Xax-ue-i5h"/>
                 <constraint firstAttribute="bottom" secondItem="hMr-bT-sZU" secondAttribute="bottom" id="YsK-fj-0NC"/>
-                <constraint firstItem="gxs-m5-ZJu" firstAttribute="bottom" secondItem="03s-w6-ofp" secondAttribute="bottom" id="bak-fP-gu2"/>
+                <constraint firstItem="cb1-SZ-qS3" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="50" id="d6H-VT-Y0d"/>
                 <constraint firstItem="EgY-2p-kaO" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="50" id="gWz-Pp-vNQ"/>
                 <constraint firstItem="pe4-e9-NNO" firstAttribute="top" secondItem="z5T-D9-5dR" secondAttribute="bottom" constant="30" id="kRn-ya-vFe"/>
-                <constraint firstItem="03s-w6-ofp" firstAttribute="top" secondItem="xkP-pT-Bge" secondAttribute="bottom" constant="15" id="mPK-VZ-VDt"/>
+                <constraint firstItem="gxs-m5-ZJu" firstAttribute="leading" secondItem="cb1-SZ-qS3" secondAttribute="trailing" constant="2" id="mz6-RO-67V"/>
                 <constraint firstItem="KZZ-PE-ucf" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="26" id="oxH-Gt-K0o"/>
-                <constraint firstItem="03s-w6-ofp" firstAttribute="leading" secondItem="Qqn-KW-kcb" secondAttribute="leading" id="qFR-Jl-CsX"/>
                 <constraint firstItem="z5T-D9-5dR" firstAttribute="leading" secondItem="KZZ-PE-ucf" secondAttribute="leading" id="rGS-yC-wDC"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="KKN-Rj-2E5" secondAttribute="trailing" constant="50" id="s9K-Pi-rCl"/>
                 <constraint firstItem="3JX-vZ-7z1" firstAttribute="centerY" secondItem="z5T-D9-5dR" secondAttribute="centerY" id="sZx-d3-NU3"/>
+                <constraint firstItem="EgY-2p-kaO" firstAttribute="top" secondItem="cb1-SZ-qS3" secondAttribute="bottom" constant="35" id="v7w-7H-xjO"/>
                 <constraint firstAttribute="trailing" secondItem="xkP-pT-Bge" secondAttribute="trailing" constant="50" id="v9p-7l-yHh"/>
                 <constraint firstItem="pe4-e9-NNO" firstAttribute="centerY" secondItem="Qqn-KW-kcb" secondAttribute="centerY" id="vxp-qO-xYX"/>
                 <constraint firstItem="Giy-Pb-iZR" firstAttribute="top" secondItem="KKN-Rj-2E5" secondAttribute="bottom" constant="20" id="wj9-He-jTE"/>
