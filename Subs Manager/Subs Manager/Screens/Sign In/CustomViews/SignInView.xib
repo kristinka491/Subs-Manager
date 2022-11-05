@@ -11,6 +11,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignInView" customModule="Subs_Manager" customModuleProvider="target">
             <connections>
                 <outlet property="getOneButton" destination="3JX-vZ-7z1" id="SIe-4O-6QC"/>
+                <outlet property="loginTextField" destination="pe4-e9-NNO" id="h2U-85-VoY"/>
+                <outlet property="passwordTextField" destination="Giy-Pb-iZR" id="Wc3-Pa-Zxl"/>
                 <outlet property="rememberMeButton" destination="cb1-SZ-qS3" id="VE8-GW-Mao"/>
                 <outlet property="signInView" destination="iN0-l3-epB" id="57t-z1-sLG"/>
             </connections>

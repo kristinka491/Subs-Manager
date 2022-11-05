@@ -19,7 +19,7 @@
 		8E4EB496291520C000633996 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4EB495291520C000633996 /* SignUpViewController.swift */; };
 		8E4EB499291520E400633996 /* SignUpScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E4EB498291520E400633996 /* SignUpScreen.storyboard */; };
 		8EE665152915295900A94599 /* SignInView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EE665142915295900A94599 /* SignInView.xib */; };
-		8EE6651A2916793800A94599 /* SubscriptionsScren.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EE665192916793800A94599 /* SubscriptionsScren.storyboard */; };
+		8EE6651A2916793800A94599 /* SubscriptionsScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EE665192916793800A94599 /* SubscriptionsScreen.storyboard */; };
 		8EE6651C2916795300A94599 /* SubscriptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE6651B2916795300A94599 /* SubscriptionsViewController.swift */; };
 		8EE66522291679A100A94599 /* SubscriptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE66520291679A100A94599 /* SubscriptionCollectionViewCell.swift */; };
 		8EE66523291679A100A94599 /* SubscriptionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EE66521291679A100A94599 /* SubscriptionCollectionViewCell.xib */; };
@@ -29,6 +29,7 @@
 		8EE6652F29167EC600A94599 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE6652E29167EC600A94599 /* User.swift */; };
 		8EE6653229167FC100A94599 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 8EE6653129167FC100A94599 /* Realm */; };
 		8EE6653429167FC100A94599 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8EE6653329167FC100A94599 /* RealmSwift */; };
+		8EE665362916A01000A94599 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE665352916A01000A94599 /* UIView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,7 +47,7 @@
 		8E4EB495291520C000633996 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		8E4EB498291520E400633996 /* SignUpScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpScreen.storyboard; sourceTree = "<group>"; };
 		8EE665142915295900A94599 /* SignInView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignInView.xib; sourceTree = "<group>"; };
-		8EE665192916793800A94599 /* SubscriptionsScren.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SubscriptionsScren.storyboard; sourceTree = "<group>"; };
+		8EE665192916793800A94599 /* SubscriptionsScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SubscriptionsScreen.storyboard; sourceTree = "<group>"; };
 		8EE6651B2916795300A94599 /* SubscriptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsViewController.swift; sourceTree = "<group>"; };
 		8EE66520291679A100A94599 /* SubscriptionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionCollectionViewCell.swift; sourceTree = "<group>"; };
 		8EE66521291679A100A94599 /* SubscriptionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubscriptionCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -54,6 +55,7 @@
 		8EE6652829167C6200A94599 /* Alert+ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+ViewControllerExtension.swift"; sourceTree = "<group>"; };
 		8EE6652B29167E5F00A94599 /* RealmDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDataStore.swift; sourceTree = "<group>"; };
 		8EE6652E29167EC600A94599 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8EE665352916A01000A94599 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +94,6 @@
 				8EE6652429167A3400A94599 /* Helper */,
 				8E4EB48A2913DFDA00633996 /* Screens */,
 				8E4EB48B2913DFF000633996 /* App */,
-				8E2C64DA2913CDC5001FD8C8 /* Assets.xcassets */,
 			);
 			path = "Subs Manager";
 			sourceTree = "<group>";
@@ -121,6 +122,7 @@
 		8E4EB48B2913DFF000633996 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				8E2C64DA2913CDC5001FD8C8 /* Assets.xcassets */,
 				8E2C64DF2913CDC5001FD8C8 /* Info.plist */,
 				8E2C64D32913CDC0001FD8C8 /* SceneDelegate.swift */,
 				8E2C64DC2913CDC5001FD8C8 /* LaunchScreen.storyboard */,
@@ -153,7 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				8EE6651D2916795900A94599 /* Cell */,
-				8EE665192916793800A94599 /* SubscriptionsScren.storyboard */,
+				8EE665192916793800A94599 /* SubscriptionsScreen.storyboard */,
 				8EE6651B2916795300A94599 /* SubscriptionsViewController.swift */,
 			);
 			path = Subscriptions;
@@ -172,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				8EE6652829167C6200A94599 /* Alert+ViewControllerExtension.swift */,
+				8EE665352916A01000A94599 /* UIView+Extension.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -271,7 +274,7 @@
 				8E2C64DB2913CDC5001FD8C8 /* Assets.xcassets in Resources */,
 				8EE66523291679A100A94599 /* SubscriptionCollectionViewCell.xib in Resources */,
 				8E4EB499291520E400633996 /* SignUpScreen.storyboard in Resources */,
-				8EE6651A2916793800A94599 /* SubscriptionsScren.storyboard in Resources */,
+				8EE6651A2916793800A94599 /* SubscriptionsScreen.storyboard in Resources */,
 				8E2C64D92913CDC0001FD8C8 /* SignInScreen.storyboard in Resources */,
 				8EE665152915295900A94599 /* SignInView.xib in Resources */,
 			);
@@ -285,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E4EB496291520C000633996 /* SignUpViewController.swift in Sources */,
+				8EE665362916A01000A94599 /* UIView+Extension.swift in Sources */,
 				8EE6652C29167E5F00A94599 /* RealmDataStore.swift in Sources */,
 				8E2C64D62913CDC0001FD8C8 /* SignInViewController.swift in Sources */,
 				8E4EB4902913ED0A00633996 /* SignInView.swift in Sources */,

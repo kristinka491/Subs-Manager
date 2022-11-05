@@ -7,14 +7,13 @@
 
 import UIKit
 
-class SignInViewController: SetUpKeyboardViewController, UIScrollViewDelegate, MoveToAnotherScreenDelegate {
+class SignInViewController: SetUpKeyboardViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
 
-    private var contentWidth: CGFloat = 0.0
-    let greetingView = GreetingView()
-    let signInView = SignInView()
+    private let greetingView = GreetingView()
+    private let signInView = SignInView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,31 +22,45 @@ class SignInViewController: SetUpKeyboardViewController, UIScrollViewDelegate, M
         setUpScrollView()
     }
 
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        pageControl.currentPage = Int(scrollView.contentOffset.x / CGFloat(414))
-    }
-
-    func moveToAnotherScreen() {
-        let storyBoard = UIStoryboard(name: "SignUpScreen", bundle: nil)
-        let signUpViewController = storyBoard.instantiateViewController(withIdentifier: "SignUpScreen") as! SignUpViewController
-        navigationController?.pushViewController(signUpViewController, animated: true)
-    }
-
     private func setUpScrollView() {
         scrollView.delegate = self
         scrollView.isPagingEnabled = true
         scrollView.addSubview(greetingView)
         scrollView.addSubview(signInView)
 
-        if let navigationBarHeight = navigationController?.navigationBar.frame.height {
-            for i in 0...1 {
-                let xCoordinate = view.frame.width * CGFloat(i)
-                contentWidth += view.frame.width
-                greetingView.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height - navigationBarHeight)
-                signInView.frame = CGRect(x: xCoordinate, y: 0, width: view.frame.size.width, height: view.frame.size.height - navigationBarHeight)
-            }
-        scrollView.contentSize = CGSize(width: contentWidth, height: view.frame.height - navigationBarHeight)
+        if let navBarHeight = navigationController?.navigationBar.frame.height {
+            let height = view.frame.height - navBarHeight
+            greetingView.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: height)
+                signInView.frame = CGRect(x: view.frame.width, y: 0, width: view.frame.size.width, height: height)
+            scrollView.contentSize = CGSize(width: 2 * view.frame.width, height: height)
         }
+    }
+}
+
+// MARK: -
+// MARK: - UIScrollViewDelegate
+
+extension SignInViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        pageControl.currentPage = Int(scrollView.contentOffset.x / CGFloat(414))
+    }
+}
+
+// MARK: -
+// MARK: - MoveToAnotherScreenDelegate
+
+extension SignInViewController: MoveToAnotherScreenDelegate {
+    func moveToRegistrationScreen() {
+        let storyBoard = UIStoryboard(name: "SignUpScreen", bundle: nil)
+        let signUpViewController = storyBoard.instantiateViewController(withIdentifier: "SignUpScreen") as! SignUpViewController
+        navigationController?.pushViewController(signUpViewController, animated: true)
+    }
+
+    func moveToSubscriptionsScreen(login: String, password: String) {
+        
+        let storyBoard = UIStoryboard(name: "SubscriptionsScreen", bundle: nil)
+        let subscriptionsViewController = storyBoard.instantiateViewController(withIdentifier: "SubscriptionsScreen") as! SubscriptionsViewController
+        navigationController?.pushViewController(subscriptionsViewController, animated: true)
     }
 }
 
