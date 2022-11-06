@@ -9,7 +9,7 @@ import UIKit
 
 protocol MoveToAnotherScreenDelegate: AnyObject {
     func moveToRegistrationScreen()
-    func moveToSubscriptionsScreen(login: String, password: String)
+    func moveToSubscriptionsScreen(login: String?, password: String?, isRemembered: Bool)
 }
 
 class SignInView: UIView {
@@ -21,14 +21,12 @@ class SignInView: UIView {
     @IBOutlet weak var passwordTextField: UITextField!
 
     private weak var delegate: MoveToAnotherScreenDelegate?
-    private var buttonActive = false
+    private var isButtonActive = false
     private let kCONTENT_XIB_NAME = "SignInView"
 
     private var isNotEmpty: Bool {
-        let loginValue = loginTextField.text
-        let passwordValue = passwordTextField.text
-        if let loginValue = loginValue,
-            let passwordValue = passwordValue  {
+        if let loginValue = loginTextField.text,
+            let passwordValue = passwordTextField.text  {
             if !loginValue.isEmpty && !passwordValue.isEmpty {
                 return true
             } else {
@@ -54,16 +52,17 @@ class SignInView: UIView {
 
     @IBAction func tappedSignInButton(_ sender: UIButton) {
         delegate?.moveToSubscriptionsScreen(login: loginTextField.text ?? "",
-                                            password: passwordTextField.text ?? "")
+                                            password: passwordTextField.text ?? "",
+                                            isRemembered: isButtonActive)
     }
 
     @IBAction func tappedRememberMeButton(_ sender: UIButton) {
-        if buttonActive {
+        if isButtonActive {
             rememberMeButton.setImage(UIImage(named: "uncheck"), for: .normal)
         } else {
             rememberMeButton.setImage(UIImage(named: "check"), for: .normal)
         }
-        buttonActive = !buttonActive
+        isButtonActive = !isButtonActive
     }
 
     func setUpDelegate(delegate: MoveToAnotherScreenDelegate) {

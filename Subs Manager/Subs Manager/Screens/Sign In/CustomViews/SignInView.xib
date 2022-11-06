@@ -55,13 +55,13 @@
                     <rect key="frame" x="85" y="190" width="279" height="20"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="17"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Giy-Pb-iZR">
                     <rect key="frame" x="85" y="251" width="279" height="20"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="17"/>
-                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EgY-2p-kaO">
                     <rect key="frame" x="50" y="357" width="314" height="40"/>
@@ -165,7 +165,6 @@
                 <constraint firstItem="Giy-Pb-iZR" firstAttribute="centerY" secondItem="R9T-8h-erD" secondAttribute="centerY" id="WpQ-HQ-wds"/>
                 <constraint firstItem="cb1-SZ-qS3" firstAttribute="top" secondItem="xkP-pT-Bge" secondAttribute="bottom" constant="10" id="X7H-YZ-NcU"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="EgY-2p-kaO" secondAttribute="trailing" constant="50" id="Xax-ue-i5h"/>
-                <constraint firstAttribute="bottom" secondItem="hMr-bT-sZU" secondAttribute="bottom" id="YsK-fj-0NC"/>
                 <constraint firstItem="cb1-SZ-qS3" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="50" id="d6H-VT-Y0d"/>
                 <constraint firstItem="EgY-2p-kaO" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="50" id="gWz-Pp-vNQ"/>
                 <constraint firstItem="pe4-e9-NNO" firstAttribute="top" secondItem="z5T-D9-5dR" secondAttribute="bottom" constant="30" id="kRn-ya-vFe"/>

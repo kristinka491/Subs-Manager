@@ -20,12 +20,9 @@ class SignUpViewController: SetUpKeyboardViewController {
     }
 
     private var isNotEmpty: Bool {
-        let nameValue = nameTextField.text
-        let loginValue = loginTextField.text
-        let passwordValue = passwordTextField.text
-        if let nameValue = nameValue,
-            let loginValue = loginValue,
-            let passwordValue = passwordValue  {
+        if let nameValue = nameTextField.text,
+            let loginValue = loginTextField.text,
+            let passwordValue = passwordTextField.text  {
             if !nameValue.isEmpty && !loginValue.isEmpty && !passwordValue.isEmpty {
                 return true
             } else {
@@ -65,10 +62,15 @@ class SignUpViewController: SetUpKeyboardViewController {
 // MARK: - UITextFieldDelegate
 
 extension SignUpViewController: UITextFieldDelegate {
+
     func textFieldDidEndEditing(_ textField: UITextField) {
         let isUserRegistered = realmDataStore.isUserRegistered(with: loginTextField.text ?? "")
         if textField == loginTextField && isUserRegistered {
             showAlert(alertText: "Sorry", alertMessage: "Unfortunately, this login is busy", completion: nil)
         }
+    }
+
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return string == " " ? false : true
     }
 }

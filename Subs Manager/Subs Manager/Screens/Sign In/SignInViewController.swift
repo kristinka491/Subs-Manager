@@ -14,6 +14,7 @@ class SignInViewController: SetUpKeyboardViewController {
 
     private let greetingView = GreetingView()
     private let signInView = SignInView()
+    private let userDefaults = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,13 @@ class SignInViewController: SetUpKeyboardViewController {
             scrollView.contentSize = CGSize(width: 2 * view.frame.width, height: height)
         }
     }
+
+    private func navigateToSubscriptionsScreen() {
+        let storyBoard = UIStoryboard(name: "SubscriptionsScreen", bundle: nil)
+        let subscriptionsViewController = storyBoard.instantiateViewController(withIdentifier: "SubscriptionsScreen") as! SubscriptionsViewController
+        navigationController?.pushViewController(subscriptionsViewController, animated: true)
+    }
+
 }
 
 // MARK: -
@@ -50,17 +58,25 @@ extension SignInViewController: UIScrollViewDelegate {
 // MARK: - MoveToAnotherScreenDelegate
 
 extension SignInViewController: MoveToAnotherScreenDelegate {
+
     func moveToRegistrationScreen() {
         let storyBoard = UIStoryboard(name: "SignUpScreen", bundle: nil)
         let signUpViewController = storyBoard.instantiateViewController(withIdentifier: "SignUpScreen") as! SignUpViewController
         navigationController?.pushViewController(signUpViewController, animated: true)
     }
 
-    func moveToSubscriptionsScreen(login: String, password: String) {
-        
-        let storyBoard = UIStoryboard(name: "SubscriptionsScreen", bundle: nil)
-        let subscriptionsViewController = storyBoard.instantiateViewController(withIdentifier: "SubscriptionsScreen") as! SubscriptionsViewController
-        navigationController?.pushViewController(subscriptionsViewController, animated: true)
+    func moveToSubscriptionsScreen(login: String?, password: String?, isRemembered: Bool) {
+        if login.isEmptyOrNil == false && password.isEmptyOrNil == false {
+            if RealmDataStore.shared.getUser(login: login ?? "", password: password ?? "") != nil {
+                userDefaults.set(isRemembered, forKey: UserDefaultsKeys.isUserRemembered)
+                userDefaults.set(true, forKey: UserDefaultsKeys.isUserLoggedIn)
+                navigateToSubscriptionsScreen()
+            } else {
+                showAlert(alertText: "Please try again", alertMessage: "Wrong e-mail or password", completion: nil)
+            }
+        } else {
+            showAlert(alertText: "Error", alertMessage: "Please enter e-mail and password", completion: nil)
+        }
     }
 }
 

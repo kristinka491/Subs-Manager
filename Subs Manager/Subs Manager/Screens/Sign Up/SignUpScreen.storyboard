@@ -37,6 +37,9 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" textContentType="name"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="GO3-3A-qEA"/>
+                                </connections>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sTM-Sw-vdM">
                                 <rect key="frame" x="50" y="199" width="314" height="1"/>
@@ -82,6 +85,9 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="password"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="haJ-Jr-rL2"/>
+                                </connections>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ihx-FX-zzB">
                                 <rect key="frame" x="50" y="311" width="314" height="1"/>
