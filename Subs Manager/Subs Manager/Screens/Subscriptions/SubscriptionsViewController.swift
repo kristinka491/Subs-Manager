@@ -11,19 +11,12 @@ class SubscriptionsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func tappedButton(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "AddSubscriptionScreen", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "AddSubscriptionScreen") as! AddSubscriptionViewController
+        controller.modalPresentationStyle = .formSheet
+        self.present(controller, animated: true, completion: nil)
     }
-    */
-
 }
