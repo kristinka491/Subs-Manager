@@ -7,23 +7,29 @@
 
 import UIKit
 
-class SubscriptionInfoViewController: UIViewController {
+class SubscriptionInfoViewController: SetUpKeyboardViewController {
 
     @IBOutlet weak var subscriptionImageView: UIImageView!
     @IBOutlet weak var subscriptionNameLabel: UILabel!
-    @IBOutlet weak var subscriptionCurrencyLabel: UILabel!
-    @IBOutlet weak var subscriptionAmountTextField: UITextField!
-    @IBOutlet weak var subscriptionPaymentDateLabel: UILabel!
-    @IBOutlet weak var subscriptionRemindMeLabel: UILabel!
+    @IBOutlet weak var currencyTextField: UITextField!
+    @IBOutlet weak var amountTextField: UITextField!
+    @IBOutlet weak var paymentDateTextField: UITextField!
+    @IBOutlet weak var remindMeTextField: UITextField!
 
-    private var picker: UIPickerView?
-    private let currencyArray: [String] = ["USD($)", "EUR(€)", "GBP(£)", "CNY(¥)", "PLN(zł)", "CAD($)"]
+    private let pickerView = ToolbarPickerView()
+
     private var subscriptionModel: Subscription?
+    private var currentSelectedTextFieldType: PickerTypeEnum = .currency
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
         setUpPicker()
+        setUpDatePicker()
+    }
+
+    @IBAction func tappedAddButton(_ sender: UIButton) {
+
     }
 
     func setUp(with model: Subscription) {
@@ -36,22 +42,29 @@ class SubscriptionInfoViewController: UIViewController {
     }
 
     private func setUpPicker() {
-        picker = UIPickerView(frame: CGRect(x: 0, y: view.bounds.height - 100, width: self.view.bounds.width, height: 100))
-        if let picker = picker {
-            picker.delegate = self
-            picker.dataSource = self
-            picker.isHidden = true
-            view.addSubview(picker)
+        [currencyTextField, remindMeTextField].forEach { texField in
+            texField?.inputView = pickerView
+            texField?.inputAccessoryView = pickerView.toolbar
         }
 
-        let tapRound = UITapGestureRecognizer(target: self,
-                                              action: #selector(self.handleTap(_:)))
-        subscriptionCurrencyLabel.addGestureRecognizer(tapRound)
+        pickerView.dataSource = self
+        pickerView.delegate = self
+        pickerView.toolbarDelegate = self
+        pickerView.reloadAllComponents()
     }
 
-    @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
-        picker?.isHidden = false
+    private func setUpDatePicker() {
+        paymentDateTextField.setDatePickerAsInputViewFor(target: self, selector: #selector(dateSelected))
     }
+
+    @objc func dateSelected() {
+           if let datePicker = paymentDateTextField.inputView as? UIDatePicker {
+               let dateFormatter = DateFormatter()
+               dateFormatter.dateStyle = .medium
+               paymentDateTextField.text = dateFormatter.string(from: datePicker.date)
+           }
+           paymentDateTextField.resignFirstResponder()
+       }
 }
 
 // MARK: -
@@ -64,15 +77,67 @@ extension SubscriptionInfoViewController: UIPickerViewDelegate, UIPickerViewData
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return currencyArray.count
+        return currentSelectedTextFieldType.array.count
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-       return currencyArray[row]
+        return currentSelectedTextFieldType.array[row]
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-            subscriptionCurrencyLabel.text = currencyArray[row]
-            self.view.endEditing(true)
+        let selectedData = currentSelectedTextFieldType.array[row]
+        switch currentSelectedTextFieldType {
+        case .currency:
+            currencyTextField.text = selectedData
+        case .remindMe:
+            remindMeTextField.text = selectedData
         }
+    }
+}
+
+
+// MARK: -
+// MARK: - ToolBarPickerViewDelegate
+
+extension SubscriptionInfoViewController: ToolbarPickerViewDelegate {
+
+    func didTapDone() {
+        switch currentSelectedTextFieldType {
+        case .currency:
+            currencyTextField.resignFirstResponder()
+        case .remindMe:
+            remindMeTextField.resignFirstResponder()
+        }
+    }
+
+    func didTapCancel() {
+        switch currentSelectedTextFieldType {
+        case .currency:
+            currencyTextField.text = nil
+            currencyTextField.resignFirstResponder()
+        case .remindMe:
+            remindMeTextField.text = nil
+            remindMeTextField.resignFirstResponder()
+        }
+    }
+}
+
+
+// MARK: -
+// MARK: - UITextFieldDelegate
+
+extension SubscriptionInfoViewController: UITextFieldDelegate {
+
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool{
+        switch textField {
+        case currencyTextField:
+            currentSelectedTextFieldType = .currency
+        case remindMeTextField:
+            currentSelectedTextFieldType = .remindMe
+        default:
+            break
+        }
+        pickerView.reloadAllComponents()
+        return true
+    }
 }

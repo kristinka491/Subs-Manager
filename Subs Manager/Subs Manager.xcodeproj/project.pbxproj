@@ -38,7 +38,9 @@
 		8EE6654B2918FA0000A94599 /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE6654A2918FA0000A94599 /* Subscription.swift */; };
 		8EE6654E291996AC00A94599 /* SubscriptionInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE6654D291996AC00A94599 /* SubscriptionInfoViewController.swift */; };
 		8EE66550291996C900A94599 /* SubscriptionInfoScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EE6654F291996C900A94599 /* SubscriptionInfoScreen.storyboard */; };
-		8EE66552291A712100A94599 /* UIPickerView+ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE66551291A712000A94599 /* UIPickerView+ViewControllerExtension.swift */; };
+		8EE66552291A712100A94599 /* ToolbarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE66551291A712000A94599 /* ToolbarPickerView.swift */; };
+		8EE66555291A758300A94599 /* PickerTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE66554291A758300A94599 /* PickerTypeEnum.swift */; };
+		8EE66558291A8AF100A94599 /* UIDatePickerTextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE66557291A8AF100A94599 /* UIDatePickerTextField+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,7 +75,9 @@
 		8EE6654A2918FA0000A94599 /* Subscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscription.swift; sourceTree = "<group>"; };
 		8EE6654D291996AC00A94599 /* SubscriptionInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionInfoViewController.swift; sourceTree = "<group>"; };
 		8EE6654F291996C900A94599 /* SubscriptionInfoScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SubscriptionInfoScreen.storyboard; sourceTree = "<group>"; };
-		8EE66551291A712000A94599 /* UIPickerView+ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIPickerView+ViewControllerExtension.swift"; sourceTree = "<group>"; };
+		8EE66551291A712000A94599 /* ToolbarPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarPickerView.swift; sourceTree = "<group>"; };
+		8EE66554291A758300A94599 /* PickerTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTypeEnum.swift; sourceTree = "<group>"; };
+		8EE66557291A8AF100A94599 /* UIDatePickerTextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDatePickerTextField+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,7 +200,8 @@
 				8EE665352916A01000A94599 /* UIView+Extension.swift */,
 				8EE665372917BECF00A94599 /* String+OptionalExtension.swift */,
 				8EE66539291812A800A94599 /* UserDefaultsKeys.swift */,
-				8EE66551291A712000A94599 /* UIPickerView+ViewControllerExtension.swift */,
+				8EE66551291A712000A94599 /* ToolbarPickerView.swift */,
+				8EE66557291A8AF100A94599 /* UIDatePickerTextField+Extension.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -249,10 +254,19 @@
 		8EE6654C2919967F00A94599 /* Subscription Info */ = {
 			isa = PBXGroup;
 			children = (
+				8EE66556291A801C00A94599 /* Type */,
 				8EE6654D291996AC00A94599 /* SubscriptionInfoViewController.swift */,
 				8EE6654F291996C900A94599 /* SubscriptionInfoScreen.storyboard */,
 			);
 			path = "Subscription Info";
+			sourceTree = "<group>";
+		};
+		8EE66556291A801C00A94599 /* Type */ = {
+			isa = PBXGroup;
+			children = (
+				8EE66554291A758300A94599 /* PickerTypeEnum.swift */,
+			);
+			path = Type;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,6 +357,7 @@
 			files = (
 				8E4EB496291520C000633996 /* SignUpViewController.swift in Sources */,
 				8EE665442918EE5C00A94599 /* AddSubscriptionTableViewCell.swift in Sources */,
+				8EE66555291A758300A94599 /* PickerTypeEnum.swift in Sources */,
 				8EE665362916A01000A94599 /* UIView+Extension.swift in Sources */,
 				8EE6654B2918FA0000A94599 /* Subscription.swift in Sources */,
 				8EE665472918EE7700A94599 /* AddSubscriptionViewController.swift in Sources */,
@@ -354,9 +369,10 @@
 				8EE665382917BECF00A94599 /* String+OptionalExtension.swift in Sources */,
 				8E4EB48E2913ECF400633996 /* GreetingView.swift in Sources */,
 				8E2C64D22913CDC0001FD8C8 /* AppDelegate.swift in Sources */,
+				8EE66558291A8AF100A94599 /* UIDatePickerTextField+Extension.swift in Sources */,
 				8EE6653D291818EE00A94599 /* SubscriptionTableViewCell.swift in Sources */,
 				8EE6652F29167EC600A94599 /* User.swift in Sources */,
-				8EE66552291A712100A94599 /* UIPickerView+ViewControllerExtension.swift in Sources */,
+				8EE66552291A712100A94599 /* ToolbarPickerView.swift in Sources */,
 				8EE6654E291996AC00A94599 /* SubscriptionInfoViewController.swift in Sources */,
 				8EE6651C2916795300A94599 /* SubscriptionsViewController.swift in Sources */,
 				8EE6652729167B0F00A94599 /* SetUpKeyboardViewController.swift in Sources */,
