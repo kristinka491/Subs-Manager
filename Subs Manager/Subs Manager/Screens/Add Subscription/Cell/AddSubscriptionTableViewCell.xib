@@ -9,48 +9,48 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="subscriptionCell" rowHeight="97" id="KGk-i7-Jjw" customClass="AddSubscriptionTableViewCell" customModule="Subs_Manager" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="365" height="97"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="subscriptionCell" rowHeight="132" id="KGk-i7-Jjw" customClass="AddSubscriptionTableViewCell" customModule="Subs_Manager" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="382" height="132"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="365" height="97"/>
+                <rect key="frame" x="0.0" y="0.0" width="382" height="132"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aHD-XD-Mtc">
-                        <rect key="frame" x="16" y="16" width="333" height="65"/>
+                        <rect key="frame" x="16" y="16" width="350" height="100"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYH-cl-c0M">
-                                <rect key="frame" x="75" y="5" width="253" height="55"/>
+                                <rect key="frame" x="80" y="25" width="265" height="50"/>
                                 <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uGW-Rw-XDd">
-                                <rect key="frame" x="5" y="5" width="55" height="55"/>
+                                <rect key="frame" x="15" y="25" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="uGW-Rw-XDd" secondAttribute="height" multiplier="1:1" id="7Bv-Y7-RKs"/>
-                                    <constraint firstAttribute="height" constant="55" id="9Oc-Tx-Zky"/>
+                                    <constraint firstAttribute="height" constant="50" id="MbN-oM-jHF"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="fYH-cl-c0M" secondAttribute="bottom" constant="5" id="FND-Zz-2W8"/>
+                            <constraint firstItem="uGW-Rw-XDd" firstAttribute="top" secondItem="aHD-XD-Mtc" secondAttribute="top" constant="25" id="DLP-uz-5a9"/>
                             <constraint firstAttribute="trailing" secondItem="fYH-cl-c0M" secondAttribute="trailing" constant="5" id="Iul-iw-lBC"/>
                             <constraint firstItem="fYH-cl-c0M" firstAttribute="leading" secondItem="uGW-Rw-XDd" secondAttribute="trailing" constant="15" id="Ubi-Ar-8sD"/>
-                            <constraint firstItem="uGW-Rw-XDd" firstAttribute="top" secondItem="aHD-XD-Mtc" secondAttribute="top" constant="5" id="eF0-dF-a7U"/>
-                            <constraint firstAttribute="bottom" secondItem="uGW-Rw-XDd" secondAttribute="bottom" constant="5" id="iEn-Lm-tge"/>
-                            <constraint firstItem="uGW-Rw-XDd" firstAttribute="leading" secondItem="aHD-XD-Mtc" secondAttribute="leading" constant="5" id="lKg-FI-idy"/>
-                            <constraint firstItem="fYH-cl-c0M" firstAttribute="top" secondItem="aHD-XD-Mtc" secondAttribute="top" constant="5" id="oBT-3o-ZtH"/>
+                            <constraint firstAttribute="bottom" secondItem="uGW-Rw-XDd" secondAttribute="bottom" constant="25" id="XYy-6w-Bg1"/>
+                            <constraint firstItem="fYH-cl-c0M" firstAttribute="top" secondItem="uGW-Rw-XDd" secondAttribute="top" id="hqC-F6-Ogr"/>
+                            <constraint firstItem="uGW-Rw-XDd" firstAttribute="leading" secondItem="aHD-XD-Mtc" secondAttribute="leading" constant="15" id="lKg-FI-idy"/>
+                            <constraint firstItem="fYH-cl-c0M" firstAttribute="bottom" secondItem="uGW-Rw-XDd" secondAttribute="bottom" id="lia-7N-z8C"/>
                         </constraints>
                     </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="aHD-XD-Mtc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="2zS-Vt-kew"/>
+                    <constraint firstAttribute="bottom" secondItem="aHD-XD-Mtc" secondAttribute="bottom" constant="16" id="40e-nR-hzW"/>
                     <constraint firstAttribute="trailing" secondItem="aHD-XD-Mtc" secondAttribute="trailing" constant="16" id="AH6-Lq-hbC"/>
                     <constraint firstItem="aHD-XD-Mtc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="TYy-TT-zqs"/>
-                    <constraint firstAttribute="bottom" secondItem="aHD-XD-Mtc" secondAttribute="bottom" constant="16" id="WoA-dZ-Lvq"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -60,7 +60,7 @@
                 <outlet property="subscriptionNameLabel" destination="fYH-cl-c0M" id="Kkx-Jg-tTU"/>
                 <outlet property="subscriptionView" destination="aHD-XD-Mtc" id="sZn-cI-rea"/>
             </connections>
-            <point key="canvasLocation" x="170.28985507246378" y="86.71875"/>
+            <point key="canvasLocation" x="182.60869565217394" y="41.517857142857139"/>
         </tableViewCell>
     </objects>
 </document>

@@ -7,13 +7,14 @@
 
 import UIKit
 
-class AddSubscriptionViewController: SetUpKeyboardViewController {
+class AddSubscriptionViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
 
     private var filteredData = [Subscription]()
     private let subscriptions: [Subscription] = [Subscription(name: "Netflix", image: UIImage(named: "netflix")), Subscription(name: "Youtube", image: UIImage(named: "youtube")), Subscription(name: "Spotify", image: UIImage(named: "spotify")), Subscription(name: "Apple Music", image: UIImage(named: "appleMusic")), Subscription(name: "Dribbble", image: UIImage(named: "dribbble")), Subscription(name: "Skype", image: UIImage(named: "skype")), Subscription(name: "Evernote", image: UIImage(named: "evernote")), Subscription(name: "iCloud", image: UIImage(named: "iCloud")), Subscription(name: "Playstation Plus", image: UIImage(named: "playstationPlus")), Subscription(name: "Amazon", image: UIImage(named: "amazon")), Subscription(name: "Apple Developer Program", image: UIImage(named: "appleDeveloper")), Subscription(name: "Apple TV+", image: UIImage(named: "appleTV")), Subscription(name: "Dropbox", image: UIImage(named: "dropbox"))]
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,14 +56,13 @@ extension AddSubscriptionViewController: UITableViewDelegate, UITableViewDataSou
         return filteredData.count
     }
 
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let storyBoard = UIStoryboard(name: "WorkoutScreen", bundle: nil)
-//        if let workoutItemViewController = storyBoard.instantiateViewController(withIdentifier: "workoutScreen") as? WorkoutItemViewController {
-//            workoutItemViewController.setUp(with: filteredListOfExercises[indexPath.row], typeOfController: .edit)
-//            navigationController?.pushViewController(workoutItemViewController, animated: true)
-//        }
-//
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyBoard = UIStoryboard(name: "SubscriptionInfoScreen", bundle: nil)
+        if let subscriptionInfoViewController = storyBoard.instantiateViewController(withIdentifier: "SubscriptionInfoScreen") as? SubscriptionInfoViewController {
+            subscriptionInfoViewController.setUp(with: filteredData[indexPath.row])
+            navigationController?.pushViewController(subscriptionInfoViewController, animated: true)
+        }
+    }
 }
 
 // MARK: -
@@ -84,3 +84,6 @@ extension AddSubscriptionViewController: UISearchBarDelegate {
         tableView.reloadData()
     }
 }
+
+
+

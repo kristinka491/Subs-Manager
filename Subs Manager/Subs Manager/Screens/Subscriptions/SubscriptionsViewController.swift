@@ -15,8 +15,8 @@ class SubscriptionsViewController: UIViewController {
 
     @IBAction func tappedButton(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "AddSubscriptionScreen", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "AddSubscriptionScreen") as! AddSubscriptionViewController
+        let controller = UINavigationController(rootViewController: storyboard.instantiateViewController(withIdentifier: "AddSubscriptionScreen"))
         controller.modalPresentationStyle = .formSheet
-        self.present(controller, animated: true, completion: nil)
+        present(controller, animated: true, completion: nil)
     }
 }

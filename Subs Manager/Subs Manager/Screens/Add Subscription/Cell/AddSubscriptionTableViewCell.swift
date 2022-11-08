@@ -18,11 +18,8 @@ class AddSubscriptionTableViewCell: UITableViewCell {
         setUpView()
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
 
-    func setUpView() {
+    private func setUpView() {
         subscriptionView.layer.cornerRadius = 20
     }
 

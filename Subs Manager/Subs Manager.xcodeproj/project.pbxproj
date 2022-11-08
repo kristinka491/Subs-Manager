@@ -36,6 +36,9 @@
 		8EE665472918EE7700A94599 /* AddSubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE665462918EE7700A94599 /* AddSubscriptionViewController.swift */; };
 		8EE665492918EE8B00A94599 /* AddSubscriptionScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EE665482918EE8B00A94599 /* AddSubscriptionScreen.storyboard */; };
 		8EE6654B2918FA0000A94599 /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE6654A2918FA0000A94599 /* Subscription.swift */; };
+		8EE6654E291996AC00A94599 /* SubscriptionInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE6654D291996AC00A94599 /* SubscriptionInfoViewController.swift */; };
+		8EE66550291996C900A94599 /* SubscriptionInfoScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EE6654F291996C900A94599 /* SubscriptionInfoScreen.storyboard */; };
+		8EE66552291A712100A94599 /* UIPickerView+ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE66551291A712000A94599 /* UIPickerView+ViewControllerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +71,9 @@
 		8EE665462918EE7700A94599 /* AddSubscriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubscriptionViewController.swift; sourceTree = "<group>"; };
 		8EE665482918EE8B00A94599 /* AddSubscriptionScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddSubscriptionScreen.storyboard; sourceTree = "<group>"; };
 		8EE6654A2918FA0000A94599 /* Subscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscription.swift; sourceTree = "<group>"; };
+		8EE6654D291996AC00A94599 /* SubscriptionInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionInfoViewController.swift; sourceTree = "<group>"; };
+		8EE6654F291996C900A94599 /* SubscriptionInfoScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SubscriptionInfoScreen.storyboard; sourceTree = "<group>"; };
+		8EE66551291A712000A94599 /* UIPickerView+ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIPickerView+ViewControllerExtension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +129,7 @@
 		8E4EB48A2913DFDA00633996 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				8EE6654C2919967F00A94599 /* Subscription Info */,
 				8EE6653F2918EE1C00A94599 /* Add Subscription */,
 				8E4EB4892913DF7100633996 /* Sign In */,
 				8E4EB497291520C700633996 /* Sign Up */,
@@ -189,6 +196,7 @@
 				8EE665352916A01000A94599 /* UIView+Extension.swift */,
 				8EE665372917BECF00A94599 /* String+OptionalExtension.swift */,
 				8EE66539291812A800A94599 /* UserDefaultsKeys.swift */,
+				8EE66551291A712000A94599 /* UIPickerView+ViewControllerExtension.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -236,6 +244,15 @@
 				8EE665432918EE5C00A94599 /* AddSubscriptionTableViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		8EE6654C2919967F00A94599 /* Subscription Info */ = {
+			isa = PBXGroup;
+			children = (
+				8EE6654D291996AC00A94599 /* SubscriptionInfoViewController.swift */,
+				8EE6654F291996C900A94599 /* SubscriptionInfoScreen.storyboard */,
+			);
+			path = "Subscription Info";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +327,7 @@
 				8EE6651A2916793800A94599 /* SubscriptionsScreen.storyboard in Resources */,
 				8EE665452918EE5C00A94599 /* AddSubscriptionTableViewCell.xib in Resources */,
 				8EE665492918EE8B00A94599 /* AddSubscriptionScreen.storyboard in Resources */,
+				8EE66550291996C900A94599 /* SubscriptionInfoScreen.storyboard in Resources */,
 				8E2C64D92913CDC0001FD8C8 /* SignInScreen.storyboard in Resources */,
 				8EE6653E291818EE00A94599 /* SubscriptionTableViewCell.xib in Resources */,
 				8EE665152915295900A94599 /* SignInView.xib in Resources */,
@@ -338,6 +356,8 @@
 				8E2C64D22913CDC0001FD8C8 /* AppDelegate.swift in Sources */,
 				8EE6653D291818EE00A94599 /* SubscriptionTableViewCell.swift in Sources */,
 				8EE6652F29167EC600A94599 /* User.swift in Sources */,
+				8EE66552291A712100A94599 /* UIPickerView+ViewControllerExtension.swift in Sources */,
+				8EE6654E291996AC00A94599 /* SubscriptionInfoViewController.swift in Sources */,
 				8EE6651C2916795300A94599 /* SubscriptionsViewController.swift in Sources */,
 				8EE6652729167B0F00A94599 /* SetUpKeyboardViewController.swift in Sources */,
 			);
