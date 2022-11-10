@@ -10,4 +10,5 @@ import UIKit
 struct UserDefaultsKeys {
     static let isUserRemembered = "isUserRemembered"
     static let isUserLoggedIn = "isUserLoggedIn"
+    static let currentUserLogin = "currentUserLogin"
 }

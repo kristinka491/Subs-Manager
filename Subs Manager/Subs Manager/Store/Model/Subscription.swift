@@ -9,7 +9,7 @@ import UIKit
 
 class Subscription {
 
-    var name: String!
+    var name: String
     var image: UIImage?
 
     init(name: String, image: UIImage?) {

@@ -14,9 +14,11 @@ class SubscriptionInfoViewController: SetUpKeyboardViewController {
     @IBOutlet weak var currencyTextField: UITextField!
     @IBOutlet weak var amountTextField: UITextField!
     @IBOutlet weak var paymentDateTextField: UITextField!
+    @IBOutlet weak var paymentCycleTextField: UITextField!
     @IBOutlet weak var remindMeTextField: UITextField!
 
     private let pickerView = ToolbarPickerView()
+    private let realmDataStore = RealmDataStore.shared
 
     private var subscriptionModel: Subscription?
     private var currentSelectedTextFieldType: PickerTypeEnum = .currency
@@ -29,7 +31,10 @@ class SubscriptionInfoViewController: SetUpKeyboardViewController {
     }
 
     @IBAction func tappedAddButton(_ sender: UIButton) {
-
+        addUserSubscription()
+        showAlert(alertText: "Thank you!", alertMessage: "Subscription was created.") { [weak self] in
+            self?.dismiss(animated: true, completion: nil)
+        }
     }
 
     func setUp(with model: Subscription) {
@@ -42,7 +47,7 @@ class SubscriptionInfoViewController: SetUpKeyboardViewController {
     }
 
     private func setUpPicker() {
-        [currencyTextField, remindMeTextField].forEach { texField in
+        [currencyTextField, remindMeTextField, paymentCycleTextField].forEach { texField in
             texField?.inputView = pickerView
             texField?.inputAccessoryView = pickerView.toolbar
         }
@@ -64,7 +69,24 @@ class SubscriptionInfoViewController: SetUpKeyboardViewController {
                paymentDateTextField.text = dateFormatter.string(from: datePicker.date)
            }
            paymentDateTextField.resignFirstResponder()
-       }
+    }
+
+    private func addUserSubscription() {
+        let isUserSubscriptionSaved = realmDataStore.addUserSubscription(subscriptionName: subscriptionNameLabel.text ?? "",
+                                                                         currency: currencyTextField.text ?? "",
+                                                                         amount: amountTextField.text ?? "",
+                                                                         paymentCycle: paymentCycleTextField.text ?? "",
+                                                                         paymentDate: paymentDateTextField.text ?? "")
+        
+        if !isUserSubscriptionSaved {
+            showAlert(alertText: "Something went wrong", alertMessage: "This user is not signed in") { [weak self] in
+                let storyBoard = UIStoryboard(name: "SignInScreen", bundle: nil)
+                let viewController = storyBoard.instantiateViewController(withIdentifier: "SignInScreen")
+                self?.view.window?.rootViewController = viewController
+                self?.view.window?.makeKeyAndVisible()
+            }
+        }
+    }
 }
 
 // MARK: -
@@ -85,12 +107,18 @@ extension SubscriptionInfoViewController: UIPickerViewDelegate, UIPickerViewData
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let selectedData = currentSelectedTextFieldType.array[row]
+       setupTextField(with: row)
+    }
+
+    private func setupTextField(with selectedRow: Int) {
+        let selectedData = currentSelectedTextFieldType.array[selectedRow]
         switch currentSelectedTextFieldType {
         case .currency:
             currencyTextField.text = selectedData
         case .remindMe:
             remindMeTextField.text = selectedData
+        case .paymentCycle:
+            paymentCycleTextField.text = selectedData
         }
     }
 }
@@ -102,11 +130,16 @@ extension SubscriptionInfoViewController: UIPickerViewDelegate, UIPickerViewData
 extension SubscriptionInfoViewController: ToolbarPickerViewDelegate {
 
     func didTapDone() {
+        let row = pickerView.selectedRow(inComponent: 0)
+        setupTextField(with: row)
+
         switch currentSelectedTextFieldType {
         case .currency:
             currencyTextField.resignFirstResponder()
         case .remindMe:
             remindMeTextField.resignFirstResponder()
+        case .paymentCycle:
+            paymentCycleTextField.resignFirstResponder()
         }
     }
 
@@ -118,6 +151,9 @@ extension SubscriptionInfoViewController: ToolbarPickerViewDelegate {
         case .remindMe:
             remindMeTextField.text = nil
             remindMeTextField.resignFirstResponder()
+        case .paymentCycle:
+            paymentCycleTextField.text = nil
+            paymentCycleTextField.resignFirstResponder()
         }
     }
 }
@@ -134,6 +170,8 @@ extension SubscriptionInfoViewController: UITextFieldDelegate {
             currentSelectedTextFieldType = .currency
         case remindMeTextField:
             currentSelectedTextFieldType = .remindMe
+        case paymentCycleTextField:
+            currentSelectedTextFieldType = .paymentCycle
         default:
             break
         }

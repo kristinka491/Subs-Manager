@@ -9,12 +9,9 @@ import Foundation
 import RealmSwift
 
 class User: Object {
+    @Persisted(primaryKey: true) var login = ""
+    @Persisted var name = ""
+    @Persisted var password = ""
 
-    @objc dynamic var login = ""
-    @objc dynamic var name = ""
-    @objc dynamic var password = ""
-
-    override static func primaryKey() -> String? {
-        return "login"
-    }
+    @Persisted var subscription: List<UserSubscription>
 }

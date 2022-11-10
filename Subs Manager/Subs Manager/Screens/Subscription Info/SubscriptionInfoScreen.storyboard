@@ -25,7 +25,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Il3-LO-XW9">
-                                <rect key="frame" x="20" y="235.5" width="374" height="50"/>
+                                <rect key="frame" x="20" y="225.5" width="374" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JKx-ri-I7H">
                                         <rect key="frame" x="0.0" y="0.0" width="183" height="50"/>
@@ -42,7 +42,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Xwt-Tr-dDs">
-                                <rect key="frame" x="20" y="346.5" width="374" height="18.5"/>
+                                <rect key="frame" x="20" y="316.5" width="374" height="18.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8O-kr-njt">
                                         <rect key="frame" x="0.0" y="0.0" width="183" height="18.5"/>
@@ -61,7 +61,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="WF2-zh-2hN">
-                                <rect key="frame" x="20" y="426" width="374" height="17.5"/>
+                                <rect key="frame" x="20" y="376" width="374" height="17.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opp-q1-pn4">
                                         <rect key="frame" x="0.0" y="0.0" width="183" height="17.5"/>
@@ -72,12 +72,12 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter amount" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FNj-AE-gDx">
                                         <rect key="frame" x="191" y="0.0" width="183" height="17.5"/>
                                         <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" textContentType="tel"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad" textContentType="tel"/>
                                     </textField>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5QA-9f-ij6">
-                                <rect key="frame" x="20" y="504.5" width="374" height="18.5"/>
+                                <rect key="frame" x="20" y="434.5" width="374" height="18.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payment date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2Q-Iu-W2g">
                                         <rect key="frame" x="0.0" y="0.0" width="183" height="18.5"/>
@@ -93,9 +93,9 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="c3f-7a-b7a">
-                                <rect key="frame" x="20" y="584" width="374" height="18.5"/>
+                                <rect key="frame" x="20" y="494" width="374" height="18.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remind me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LE4-9t-942">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payment Cycle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LE4-9t-942">
                                         <rect key="frame" x="0.0" y="0.0" width="183" height="18.5"/>
                                         <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="16"/>
                                         <nil key="textColor"/>
@@ -112,28 +112,28 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XsK-4N-pzR">
-                                <rect key="frame" x="16" y="315.5" width="382" height="1"/>
+                                <rect key="frame" x="16" y="295.5" width="382" height="1"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="GIP-uP-3Kb"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sF3-Ny-DLH">
-                                <rect key="frame" x="16" y="395" width="382" height="1"/>
+                                <rect key="frame" x="16" y="355" width="382" height="1"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="kMA-ge-i6B"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DbI-fR-qPv">
-                                <rect key="frame" x="16" y="473.5" width="382" height="1"/>
+                                <rect key="frame" x="16" y="413.5" width="382" height="1"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="XvN-bE-oU4"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fs8-66-Hrv">
-                                <rect key="frame" x="16" y="553" width="382" height="1"/>
+                                <rect key="frame" x="16" y="473" width="382" height="1"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="Qk2-nd-PWb"/>
@@ -147,14 +147,14 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D7N-uQ-dbB">
-                                <rect key="frame" x="16" y="632.5" width="382" height="1"/>
+                                <rect key="frame" x="16" y="532.5" width="382" height="1"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="m0L-vT-jwI"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7se-1P-SQK">
-                                <rect key="frame" x="30" y="663.5" width="354" height="50"/>
+                                <rect key="frame" x="30" y="613" width="354" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="9c5-2F-bKP"/>
                                 </constraints>
@@ -167,42 +167,74 @@
                                     <action selector="tappedAddButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="AUa-RA-XZu"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="R6X-x4-GCc">
+                                <rect key="frame" x="20" y="553.5" width="374" height="18.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remind me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBJ-4t-nAn">
+                                        <rect key="frame" x="0.0" y="0.0" width="183" height="18.5"/>
+                                        <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VV6-1a-WKH">
+                                        <rect key="frame" x="191" y="0.0" width="183" height="18.5"/>
+                                        <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Y6W-OH-hqX" id="0WC-ch-9gS"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uaH-uT-QRE">
+                                <rect key="frame" x="16" y="592" width="382" height="1"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="BC3-JA-0za"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="fs8-66-Hrv" firstAttribute="top" secondItem="5QA-9f-ij6" secondAttribute="bottom" constant="30" id="09b-1V-JNG"/>
+                            <constraint firstItem="fs8-66-Hrv" firstAttribute="top" secondItem="5QA-9f-ij6" secondAttribute="bottom" constant="20" id="09b-1V-JNG"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="7se-1P-SQK" secondAttribute="bottom" constant="16" id="0dB-Lv-b73"/>
                             <constraint firstItem="c3f-7a-b7a" firstAttribute="leading" secondItem="Il3-LO-XW9" secondAttribute="leading" id="2fh-Pr-uu5"/>
                             <constraint firstAttribute="trailing" secondItem="D7N-uQ-dbB" secondAttribute="trailing" constant="16" id="3Dc-i9-XXI"/>
                             <constraint firstAttribute="trailing" secondItem="fs8-66-Hrv" secondAttribute="trailing" constant="16" id="3FZ-2p-oPT"/>
                             <constraint firstItem="KEL-w7-NDc" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" multiplier="0.3" id="4EQ-uC-72R"/>
                             <constraint firstItem="Xwt-Tr-dDs" firstAttribute="leading" secondItem="Il3-LO-XW9" secondAttribute="leading" id="65c-NT-JMG"/>
+                            <constraint firstItem="R6X-x4-GCc" firstAttribute="trailing" secondItem="c3f-7a-b7a" secondAttribute="trailing" id="7I6-2o-2T9"/>
                             <constraint firstItem="5QA-9f-ij6" firstAttribute="leading" secondItem="Il3-LO-XW9" secondAttribute="leading" id="8VB-3i-jzo"/>
-                            <constraint firstItem="5QA-9f-ij6" firstAttribute="top" secondItem="DbI-fR-qPv" secondAttribute="bottom" constant="30" id="BZn-xM-enu"/>
+                            <constraint firstItem="uaH-uT-QRE" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="16" id="BD6-WP-8vT"/>
+                            <constraint firstItem="5QA-9f-ij6" firstAttribute="top" secondItem="DbI-fR-qPv" secondAttribute="bottom" constant="20" id="BZn-xM-enu"/>
                             <constraint firstItem="D7N-uQ-dbB" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="16" id="DkT-VR-xyq"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="XsK-4N-pzR" secondAttribute="trailing" constant="16" id="DuZ-8d-9QF"/>
-                            <constraint firstItem="Il3-LO-XW9" firstAttribute="top" secondItem="fYd-sz-CVL" secondAttribute="bottom" constant="30" id="EfB-Du-L1K"/>
+                            <constraint firstItem="Il3-LO-XW9" firstAttribute="top" secondItem="fYd-sz-CVL" secondAttribute="bottom" constant="20" id="EfB-Du-L1K"/>
                             <constraint firstAttribute="trailing" secondItem="DbI-fR-qPv" secondAttribute="trailing" constant="16" id="K4Z-6d-ggk"/>
                             <constraint firstItem="Xwt-Tr-dDs" firstAttribute="trailing" secondItem="Il3-LO-XW9" secondAttribute="trailing" id="KeQ-y6-oZf"/>
+                            <constraint firstItem="uaH-uT-QRE" firstAttribute="top" secondItem="R6X-x4-GCc" secondAttribute="bottom" constant="20" id="KtT-Mh-c2h"/>
                             <constraint firstItem="WF2-zh-2hN" firstAttribute="leading" secondItem="Il3-LO-XW9" secondAttribute="leading" id="LrX-bU-aca"/>
-                            <constraint firstItem="sF3-Ny-DLH" firstAttribute="top" secondItem="Xwt-Tr-dDs" secondAttribute="bottom" constant="30" id="PED-f5-vF1"/>
-                            <constraint firstItem="WF2-zh-2hN" firstAttribute="top" secondItem="sF3-Ny-DLH" secondAttribute="bottom" constant="30" id="Pb3-yF-RAO"/>
+                            <constraint firstItem="sF3-Ny-DLH" firstAttribute="top" secondItem="Xwt-Tr-dDs" secondAttribute="bottom" constant="20" id="PED-f5-vF1"/>
+                            <constraint firstItem="R6X-x4-GCc" firstAttribute="top" secondItem="D7N-uQ-dbB" secondAttribute="bottom" constant="20" id="PMl-Vs-Hd8"/>
+                            <constraint firstItem="WF2-zh-2hN" firstAttribute="top" secondItem="sF3-Ny-DLH" secondAttribute="bottom" constant="20" id="Pb3-yF-RAO"/>
                             <constraint firstAttribute="trailing" secondItem="sF3-Ny-DLH" secondAttribute="trailing" constant="16" id="Rfg-K6-oD5"/>
-                            <constraint firstItem="D7N-uQ-dbB" firstAttribute="top" secondItem="c3f-7a-b7a" secondAttribute="bottom" constant="30" id="b2P-bZ-BSr"/>
+                            <constraint firstItem="7se-1P-SQK" firstAttribute="top" secondItem="uaH-uT-QRE" secondAttribute="bottom" constant="20" id="Wpv-QU-abq"/>
+                            <constraint firstItem="D7N-uQ-dbB" firstAttribute="top" secondItem="c3f-7a-b7a" secondAttribute="bottom" constant="20" id="b2P-bZ-BSr"/>
                             <constraint firstItem="7se-1P-SQK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="csK-sz-Ftr"/>
                             <constraint firstAttribute="trailing" secondItem="fYd-sz-CVL" secondAttribute="trailing" constant="16" id="dTE-Gl-kn1"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="7se-1P-SQK" secondAttribute="trailing" constant="30" id="e8K-1K-zPi"/>
-                            <constraint firstItem="7se-1P-SQK" firstAttribute="top" secondItem="D7N-uQ-dbB" secondAttribute="bottom" constant="30" id="g08-OW-9rG"/>
-                            <constraint firstItem="DbI-fR-qPv" firstAttribute="top" secondItem="WF2-zh-2hN" secondAttribute="bottom" constant="30" id="g34-7I-YJZ"/>
-                            <constraint firstItem="XsK-4N-pzR" firstAttribute="top" secondItem="Il3-LO-XW9" secondAttribute="bottom" constant="30" id="gPB-6A-X2k"/>
+                            <constraint firstItem="DbI-fR-qPv" firstAttribute="top" secondItem="WF2-zh-2hN" secondAttribute="bottom" constant="20" id="g34-7I-YJZ"/>
+                            <constraint firstItem="XsK-4N-pzR" firstAttribute="top" secondItem="Il3-LO-XW9" secondAttribute="bottom" constant="20" id="gPB-6A-X2k"/>
                             <constraint firstItem="fYd-sz-CVL" firstAttribute="top" secondItem="KEL-w7-NDc" secondAttribute="bottom" constant="20" id="hOB-i1-ybB"/>
+                            <constraint firstAttribute="trailing" secondItem="uaH-uT-QRE" secondAttribute="trailing" constant="16" id="iKb-NX-YAt"/>
                             <constraint firstItem="DbI-fR-qPv" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="16" id="id6-F5-g1e"/>
                             <constraint firstItem="fs8-66-Hrv" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="16" id="jhf-Tf-bwp"/>
                             <constraint firstItem="5QA-9f-ij6" firstAttribute="trailing" secondItem="Il3-LO-XW9" secondAttribute="trailing" id="kuA-cY-HNt"/>
+                            <constraint firstItem="R6X-x4-GCc" firstAttribute="leading" secondItem="c3f-7a-b7a" secondAttribute="leading" id="m4D-GZ-YZu"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Il3-LO-XW9" secondAttribute="trailing" constant="20" id="oVJ-l6-DYN"/>
-                            <constraint firstItem="Xwt-Tr-dDs" firstAttribute="top" secondItem="XsK-4N-pzR" secondAttribute="bottom" constant="30" id="r6W-cX-mSx"/>
-                            <constraint firstItem="c3f-7a-b7a" firstAttribute="top" secondItem="fs8-66-Hrv" secondAttribute="bottom" constant="30" id="rNE-Mb-Fw5"/>
+                            <constraint firstItem="Xwt-Tr-dDs" firstAttribute="top" secondItem="XsK-4N-pzR" secondAttribute="bottom" constant="20" id="r6W-cX-mSx"/>
+                            <constraint firstItem="c3f-7a-b7a" firstAttribute="top" secondItem="fs8-66-Hrv" secondAttribute="bottom" constant="20" id="rNE-Mb-Fw5"/>
                             <constraint firstItem="fYd-sz-CVL" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="16" id="tCf-xV-ZSB"/>
                             <constraint firstItem="WF2-zh-2hN" firstAttribute="trailing" secondItem="Il3-LO-XW9" secondAttribute="trailing" id="uRe-af-Jdw"/>
                             <constraint firstItem="Il3-LO-XW9" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="v5K-Gw-86v"/>
@@ -215,8 +247,9 @@
                     <connections>
                         <outlet property="amountTextField" destination="FNj-AE-gDx" id="ArK-i8-XQz"/>
                         <outlet property="currencyTextField" destination="MQO-CL-NDG" id="gVF-e3-N5P"/>
+                        <outlet property="paymentCycleTextField" destination="UDl-X3-8ke" id="a2J-AL-f31"/>
                         <outlet property="paymentDateTextField" destination="OGU-qQ-uBq" id="I0b-2z-HAH"/>
-                        <outlet property="remindMeTextField" destination="UDl-X3-8ke" id="l2l-s1-kIq"/>
+                        <outlet property="remindMeTextField" destination="VV6-1a-WKH" id="kuQ-6H-1VP"/>
                         <outlet property="subscriptionImageView" destination="KEL-w7-NDc" id="OhU-Sj-8mm"/>
                         <outlet property="subscriptionNameLabel" destination="Xmj-ZP-dJ7" id="0o2-OC-1mn"/>
                     </connections>

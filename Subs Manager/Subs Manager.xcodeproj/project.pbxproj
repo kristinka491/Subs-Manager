@@ -41,6 +41,8 @@
 		8EE66552291A712100A94599 /* ToolbarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE66551291A712000A94599 /* ToolbarPickerView.swift */; };
 		8EE66555291A758300A94599 /* PickerTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE66554291A758300A94599 /* PickerTypeEnum.swift */; };
 		8EE66558291A8AF100A94599 /* UIDatePickerTextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE66557291A8AF100A94599 /* UIDatePickerTextField+Extension.swift */; };
+		8EE6655A291BA86E00A94599 /* UserSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE66559291BA86E00A94599 /* UserSubscription.swift */; };
+		8EE6655C291BD7A600A94599 /* PaymentCycleEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE6655B291BD7A400A94599 /* PaymentCycleEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +80,8 @@
 		8EE66551291A712000A94599 /* ToolbarPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarPickerView.swift; sourceTree = "<group>"; };
 		8EE66554291A758300A94599 /* PickerTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTypeEnum.swift; sourceTree = "<group>"; };
 		8EE66557291A8AF100A94599 /* UIDatePickerTextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDatePickerTextField+Extension.swift"; sourceTree = "<group>"; };
+		8EE66559291BA86E00A94599 /* UserSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSubscription.swift; sourceTree = "<group>"; };
+		8EE6655B291BD7A400A94599 /* PaymentCycleEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCycleEnum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				8EE6652E29167EC600A94599 /* User.swift */,
+				8EE66559291BA86E00A94599 /* UserSubscription.swift */,
 				8EE6654A2918FA0000A94599 /* Subscription.swift */,
 			);
 			path = Model;
@@ -265,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				8EE66554291A758300A94599 /* PickerTypeEnum.swift */,
+				8EE6655B291BD7A400A94599 /* PaymentCycleEnum.swift */,
 			);
 			path = Type;
 			sourceTree = "<group>";
@@ -360,6 +366,7 @@
 				8EE66555291A758300A94599 /* PickerTypeEnum.swift in Sources */,
 				8EE665362916A01000A94599 /* UIView+Extension.swift in Sources */,
 				8EE6654B2918FA0000A94599 /* Subscription.swift in Sources */,
+				8EE6655A291BA86E00A94599 /* UserSubscription.swift in Sources */,
 				8EE665472918EE7700A94599 /* AddSubscriptionViewController.swift in Sources */,
 				8EE6652C29167E5F00A94599 /* RealmDataStore.swift in Sources */,
 				8E2C64D62913CDC0001FD8C8 /* SignInViewController.swift in Sources */,
@@ -376,6 +383,7 @@
 				8EE6654E291996AC00A94599 /* SubscriptionInfoViewController.swift in Sources */,
 				8EE6651C2916795300A94599 /* SubscriptionsViewController.swift in Sources */,
 				8EE6652729167B0F00A94599 /* SetUpKeyboardViewController.swift in Sources */,
+				8EE6655C291BD7A600A94599 /* PaymentCycleEnum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

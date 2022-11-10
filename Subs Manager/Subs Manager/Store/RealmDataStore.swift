@@ -6,12 +6,14 @@
 //
 
 import RealmSwift
+import UIKit
 
 class RealmDataStore {
 
     static let shared = RealmDataStore()
-
     private init() {}
+
+    private let realm = try? Realm()
 
     func addUser(name: String,
                  login: String,
@@ -28,9 +30,33 @@ class RealmDataStore {
         return false
     }
 
+    func addUserSubscription(subscriptionName: String,
+                             currency: String,
+                             amount: String,
+                             paymentCycle: String,
+                             paymentDate: String) -> Bool {
+        if let currentUserLogin = UserDefaults.standard.string(forKey: UserDefaultsKeys.currentUserLogin),
+           let user = realm?.object(ofType: User.self,
+                                             forPrimaryKey: currentUserLogin) {
+            let userSubscription = UserSubscription()
+            userSubscription.id = UUID()
+            userSubscription.subscriptionName = subscriptionName
+            userSubscription.currency = currency
+            userSubscription.amount = amount
+            userSubscription.paymentCycle = paymentCycle
+            userSubscription.paymentDate = paymentDate
+
+            try? realm?.write {
+                user.subscription.append(userSubscription)
+            }
+            return true
+        }
+        return false
+    }
+
     func getUser(login: String, password: String) -> User? {
-        if let user = try! Realm().object(ofType: User.self,
-                                          forPrimaryKey: login),
+        if let user = realm?.object(ofType: User.self,
+                                   forPrimaryKey: login),
            user.password == password {
             return user
         }
@@ -38,12 +64,11 @@ class RealmDataStore {
     }
 
     func isUserRegistered(with login: String) -> Bool {
-        return try! Realm().object(ofType: User.self,
-                                   forPrimaryKey: login) != nil
+        return realm?.object(ofType: User.self,
+                             forPrimaryKey: login) != nil
     }
 
     private func saveObject(user: User) {
-        let realm = try? Realm()
         try? realm?.write {
             realm?.add(user)
         }

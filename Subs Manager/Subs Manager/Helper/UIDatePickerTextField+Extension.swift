@@ -9,10 +9,11 @@ import UIKit
 
 extension UITextField {
 
-    func setDatePickerAsInputViewFor(target:Any, selector:Selector) {
+    func setDatePickerAsInputViewFor(target: Any, selector: Selector) {
         let screenWidth = UIScreen.main.bounds.width
         let datePicker = UIDatePicker(frame: CGRect(x: 0.0, y: 0.0, width: screenWidth, height: 200.0))
         datePicker.datePickerMode = .date
+        datePicker.preferredDatePickerStyle = .wheels
         self.inputView = datePicker
 
         let toolBar = UIToolbar(frame: CGRect(x: 0.0, y: 0.0, width: screenWidth, height: 50.0))

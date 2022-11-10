@@ -39,10 +39,9 @@ class SignInViewController: SetUpKeyboardViewController {
 
     private func navigateToSubscriptionsScreen() {
         let storyBoard = UIStoryboard(name: "SubscriptionsScreen", bundle: nil)
-        let subscriptionsViewController = storyBoard.instantiateViewController(withIdentifier: "SubscriptionsScreen") as! SubscriptionsViewController
+        let subscriptionsViewController = storyBoard.instantiateViewController(withIdentifier: "SubscriptionsScreen")
         navigationController?.pushViewController(subscriptionsViewController, animated: true)
     }
-
 }
 
 // MARK: -
@@ -61,15 +60,16 @@ extension SignInViewController: MoveToAnotherScreenDelegate {
 
     func moveToRegistrationScreen() {
         let storyBoard = UIStoryboard(name: "SignUpScreen", bundle: nil)
-        let signUpViewController = storyBoard.instantiateViewController(withIdentifier: "SignUpScreen") as! SignUpViewController
+        let signUpViewController = storyBoard.instantiateViewController(withIdentifier: "SignUpScreen")
         navigationController?.pushViewController(signUpViewController, animated: true)
     }
 
     func moveToSubscriptionsScreen(login: String?, password: String?, isRemembered: Bool) {
-        if login.isEmptyOrNil == false && password.isEmptyOrNil == false {
+        if !login.isEmptyOrNil && !password.isEmptyOrNil {
             if RealmDataStore.shared.getUser(login: login ?? "", password: password ?? "") != nil {
                 userDefaults.set(isRemembered, forKey: UserDefaultsKeys.isUserRemembered)
                 userDefaults.set(true, forKey: UserDefaultsKeys.isUserLoggedIn)
+                userDefaults.set(login, forKey: UserDefaultsKeys.currentUserLogin)
                 navigateToSubscriptionsScreen()
             } else {
                 showAlert(alertText: "Please try again", alertMessage: "Wrong e-mail or password", completion: nil)
