@@ -30,13 +30,13 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JKx-ri-I7H">
                                         <rect key="frame" x="0.0" y="0.0" width="183" height="50"/>
                                         <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="16"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xmj-ZP-dJ7">
                                         <rect key="frame" x="191" y="0.0" width="183" height="50"/>
                                         <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="16"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -47,11 +47,12 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8O-kr-njt">
                                         <rect key="frame" x="0.0" y="0.0" width="183" height="18.5"/>
                                         <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="16"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MQO-CL-NDG">
                                         <rect key="frame" x="191" y="0.0" width="183" height="18.5"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -66,11 +67,12 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opp-q1-pn4">
                                         <rect key="frame" x="0.0" y="0.0" width="183" height="17.5"/>
                                         <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="16"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter amount" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FNj-AE-gDx">
                                         <rect key="frame" x="191" y="0.0" width="183" height="17.5"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad" textContentType="tel"/>
                                     </textField>
@@ -82,11 +84,12 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payment date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2Q-Iu-W2g">
                                         <rect key="frame" x="0.0" y="0.0" width="183" height="18.5"/>
                                         <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="16"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Select date" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OGU-qQ-uBq">
                                         <rect key="frame" x="191" y="0.0" width="183" height="18.5"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -98,11 +101,12 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payment Cycle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LE4-9t-942">
                                         <rect key="frame" x="0.0" y="0.0" width="183" height="18.5"/>
                                         <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="16"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UDl-X3-8ke">
                                         <rect key="frame" x="191" y="0.0" width="183" height="18.5"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -113,42 +117,42 @@
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XsK-4N-pzR">
                                 <rect key="frame" x="16" y="295.5" width="382" height="1"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="GIP-uP-3Kb"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sF3-Ny-DLH">
                                 <rect key="frame" x="16" y="355" width="382" height="1"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="kMA-ge-i6B"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DbI-fR-qPv">
                                 <rect key="frame" x="16" y="413.5" width="382" height="1"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="XvN-bE-oU4"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fs8-66-Hrv">
                                 <rect key="frame" x="16" y="473" width="382" height="1"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="Qk2-nd-PWb"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fYd-sz-CVL">
                                 <rect key="frame" x="16" y="204.5" width="382" height="1"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="B6E-Ge-DD4"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D7N-uQ-dbB">
                                 <rect key="frame" x="16" y="532.5" width="382" height="1"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="m0L-vT-jwI"/>
                                 </constraints>
@@ -158,7 +162,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="9c5-2F-bKP"/>
                                 </constraints>
-                                <color key="tintColor" red="0.98900773789999996" green="0.57903343460000001" blue="0.0072032874080000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Add">
                                     <fontDescription key="titleFontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="20"/>
@@ -173,11 +177,12 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remind me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBJ-4t-nAn">
                                         <rect key="frame" x="0.0" y="0.0" width="183" height="18.5"/>
                                         <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="16"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VV6-1a-WKH">
                                         <rect key="frame" x="191" y="0.0" width="183" height="18.5"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -188,7 +193,7 @@
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uaH-uT-QRE">
                                 <rect key="frame" x="16" y="592" width="382" height="1"/>
-                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="BC3-JA-0za"/>
                                 </constraints>

@@ -20,7 +20,7 @@ class SubscriptionInfoViewController: SetUpKeyboardViewController {
     private let pickerView = ToolbarPickerView()
     private let realmDataStore = RealmDataStore.shared
 
-    private var subscriptionModel: Subscription?
+    private var subscriptionType: SubscriptionEnum?
     private var currentSelectedTextFieldType: PickerTypeEnum = .currency
 
     override func viewDidLoad() {
@@ -37,13 +37,13 @@ class SubscriptionInfoViewController: SetUpKeyboardViewController {
         }
     }
 
-    func setUp(with model: Subscription) {
-        subscriptionModel = model
+    func setUp(with type: SubscriptionEnum) {
+        subscriptionType = type
     }
 
     private func setUpView() {
-        subscriptionNameLabel.text = subscriptionModel?.name
-        subscriptionImageView.image = subscriptionModel?.image
+        subscriptionNameLabel.text = subscriptionType?.rawValue
+        subscriptionImageView.image = subscriptionType?.image
     }
 
     private func setUpPicker() {

@@ -27,7 +27,7 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SUBS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yge-mR-b9s">
                     <rect key="frame" x="16" y="70" width="382" height="30"/>
                     <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="30"/>
-                    <color key="textColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MANAGER" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y1K-rp-16N">
@@ -45,7 +45,7 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We are happy to see you here!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HqK-Ic-qLr">
                     <rect key="frame" x="50" y="631" width="314" height="21"/>
                     <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="21"/>
-                    <color key="textColor" red="0.98900773789999996" green="0.57903343460000001" blue="0.0072032874080000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
