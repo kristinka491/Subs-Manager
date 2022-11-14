@@ -16,12 +16,16 @@ class SubscriptionsViewController: UIViewController {
 
     private let realmDataStore = RealmDataStore.shared
     private var user: User?
-    
+    private var userNotification: NotificationToken?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         getCurrentUser()
         setUpCollectionView()
+    }
+
+    deinit {
+        userNotification?.invalidate()
     }
 
     @IBAction func tappedAddButton(_ sender: UIButton) {
@@ -50,6 +54,10 @@ class SubscriptionsViewController: UIViewController {
     private func getCurrentUser() {
         if let currentUserLogin = UserDefaults.standard.string(forKey: UserDefaultsKeys.currentUserLogin) {
             user = realmDataStore.getUser(with: currentUserLogin)
+
+            userNotification = user?.subscriptions.observe { [weak self] _ in
+                self?.collectionView.reloadData()
+            }
             setUpLabels()
         }
     }
@@ -65,13 +73,13 @@ class SubscriptionsViewController: UIViewController {
 extension SubscriptionsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return user?.subscription.count ?? 0
+        return user?.subscriptions.count ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "subscriptionCell", for: indexPath) as? SubscriptionCollectionViewCell {
-            if let userSubscription = user?.subscription {
-                cell.setUpCell(userSubscription[indexPath.row])
+            if let userSubscription = user?.subscriptions {
+                cell.setUpCell(userSubscription[indexPath.row], delegate: self)
                 return cell
             }
         }
@@ -83,6 +91,24 @@ extension SubscriptionsViewController: UICollectionViewDelegate, UICollectionVie
         let spaceBetweenCells = 5
         let screenWidth = UIScreen.main.bounds.width
         let cellWidth = (Int(screenWidth) - spaceBetweenCells * (numberOfCellsInRow + 1)) / numberOfCellsInRow
-        return CGSize(width: cellWidth, height: 250)
+        return CGSize(width: cellWidth, height: 240)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyBoard = UIStoryboard(name: "SubscriptionInfoScreen", bundle: nil)
+        if let subscriptionInfoViewController = storyBoard.instantiateViewController(withIdentifier: "SubscriptionInfoScreen") as? SubscriptionInfoViewController {
+            subscriptionInfoViewController.setUp(with: user?.subscriptions[indexPath.row], typeOfController: .edit)
+            navigationController?.pushViewController(subscriptionInfoViewController, animated: true)
+        }
+    }
+}
+
+// MARK: -
+// MARK: - DeleteUserSubscription
+
+extension SubscriptionsViewController: DeleteUserSubscriptionDelegate {
+
+    func deleteUserSubscription(subscriptionID: UUID) {
+        realmDataStore.deleteSubscription(with: subscriptionID)
     }
 }

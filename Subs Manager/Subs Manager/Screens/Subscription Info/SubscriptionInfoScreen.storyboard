@@ -75,6 +75,9 @@
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad" textContentType="tel"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Y6W-OH-hqX" id="zc7-sX-a4K"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -92,6 +95,9 @@
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Y6W-OH-hqX" id="k71-GT-vt2"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -157,16 +163,15 @@
                                     <constraint firstAttribute="height" constant="1" id="m0L-vT-jwI"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7se-1P-SQK">
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7se-1P-SQK">
                                 <rect key="frame" x="30" y="613" width="354" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGrayColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="9c5-2F-bKP"/>
                                 </constraints>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Add">
-                                    <fontDescription key="titleFontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="20"/>
-                                </buttonConfiguration>
+                                <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="20"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Add"/>
                                 <connections>
                                     <action selector="tappedAddButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="AUa-RA-XZu"/>
                                 </connections>
@@ -250,6 +255,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addButton" destination="7se-1P-SQK" id="Y60-xk-R5R"/>
                         <outlet property="amountTextField" destination="FNj-AE-gDx" id="ArK-i8-XQz"/>
                         <outlet property="currencyTextField" destination="MQO-CL-NDG" id="gVF-e3-N5P"/>
                         <outlet property="paymentCycleTextField" destination="UDl-X3-8ke" id="a2J-AL-f31"/>
@@ -267,6 +273,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

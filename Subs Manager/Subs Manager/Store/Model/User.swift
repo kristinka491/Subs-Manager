@@ -13,5 +13,5 @@ class User: Object {
     @Persisted var name = ""
     @Persisted var password = ""
 
-    @Persisted var subscription: List<UserSubscription>
+    @Persisted var subscriptions: List<UserSubscription>
 }

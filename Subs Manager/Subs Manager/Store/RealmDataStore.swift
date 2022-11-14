@@ -34,20 +34,21 @@ class RealmDataStore {
                              currency: String,
                              amount: String,
                              paymentCycle: String,
-                             paymentDate: String) -> Bool {
+                             paymentDate: String,
+                             remindMe: String) -> Bool {
         if let currentUserLogin = UserDefaults.standard.string(forKey: UserDefaultsKeys.currentUserLogin),
-           let user = realm?.object(ofType: User.self,
-                                             forPrimaryKey: currentUserLogin) {
-            let userSubscription = UserSubscription()
-            userSubscription.id = UUID()
-            userSubscription.subscriptionName = subscriptionName
-            userSubscription.currency = currency
-            userSubscription.amount = amount
-            userSubscription.paymentCycle = paymentCycle
-            userSubscription.paymentDate = paymentDate
-
+            let currentUser = realm?.object(ofType: User.self,
+                                          forPrimaryKey: currentUserLogin) {
             try? realm?.write {
-                user.subscription.append(userSubscription)
+                let userSubscription = UserSubscription()
+                userSubscription.subscriptionName = subscriptionName
+                userSubscription.currency = currency
+                userSubscription.amount = amount
+                userSubscription.paymentCycle = paymentCycle
+                userSubscription.paymentDate = paymentDate
+                userSubscription.remindMe = remindMe
+
+                currentUser.subscriptions.append(userSubscription)
             }
             return true
         }
@@ -69,6 +70,35 @@ class RealmDataStore {
 
     func isUserRegistered(with login: String) -> Bool {
         return getUser(with: login) != nil
+    }
+
+    func deleteSubscription(with id: UUID) {
+        if let userSubscription = realm?.object(ofType: UserSubscription.self,
+                                                forPrimaryKey: id) {
+            try? realm?.write {
+                realm?.delete(userSubscription)
+            }
+        }
+    }
+
+    func updateSubscription(subscriptionId: UUID,
+                            currency: String,
+                            amount: String,
+                            paymentCycle: String,
+                            paymentDate: String,
+                            remindMe: String) -> Bool {
+        if let userSubscription = realm?.object(ofType: UserSubscription.self,
+                                                forPrimaryKey: subscriptionId) {
+            try? realm?.write {
+                userSubscription.currency = currency
+                userSubscription.amount = amount
+                userSubscription.paymentCycle = paymentCycle
+                userSubscription.paymentDate = paymentDate
+                userSubscription.remindMe = remindMe
+            }
+            return true
+        }
+        return false
     }
 
     private func saveObject(user: User) {

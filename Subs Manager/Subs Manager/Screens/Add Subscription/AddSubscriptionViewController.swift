@@ -52,7 +52,7 @@ extension AddSubscriptionViewController: UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyBoard = UIStoryboard(name: "SubscriptionInfoScreen", bundle: nil)
         if let subscriptionInfoViewController = storyBoard.instantiateViewController(withIdentifier: "SubscriptionInfoScreen") as? SubscriptionInfoViewController {
-            subscriptionInfoViewController.setUp(with: filteredData[indexPath.row])
+            subscriptionInfoViewController.setUp(with: filteredData[indexPath.row], typeOfController: .add)
             navigationController?.pushViewController(subscriptionInfoViewController, animated: true)
         }
     }
