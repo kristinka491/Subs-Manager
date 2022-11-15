@@ -11,6 +11,7 @@ enum PickerTypeEnum {
     case currency
     case remindMe
     case paymentCycle
+    case category
 
     var array: [String] {
         switch self {
@@ -19,7 +20,9 @@ enum PickerTypeEnum {
         case .remindMe:
             return ["Never", "This day", "The day before", "Three days before", "Five days before", "One week before", "Ten days before", "Two weeks before"]
         case .paymentCycle:
-            return ["Every week", "Every ten days", "Every two weeks", "Every fifteen days", "Every twenty days", "Every three weeks", "Every twenty five days", "Every month", "Every two months", "Every three months", "Every half a year", "Every year"]
+            return ["Every two weeks", "Every month", "Every year"]
+        case .category:
+            return ["Entertainment", "Utilities", "Music", "Work"]
         }
     }
 }

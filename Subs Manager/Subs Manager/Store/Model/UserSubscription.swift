@@ -16,6 +16,7 @@ class UserSubscription: Object {
     @Persisted var paymentDate = ""
     @Persisted var paymentCycle = ""
     @Persisted var remindMe = ""
+    @Persisted var category = ""
 }
 
 

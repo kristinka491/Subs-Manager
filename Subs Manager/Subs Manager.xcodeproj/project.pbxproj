@@ -17,6 +17,10 @@
 		8E4EB4922913ED2800633996 /* GreetingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E4EB4912913ED2800633996 /* GreetingView.xib */; };
 		8E4EB496291520C000633996 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4EB495291520C000633996 /* SignUpViewController.swift */; };
 		8E4EB499291520E400633996 /* SignUpScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E4EB498291520E400633996 /* SignUpScreen.storyboard */; };
+		8E58BDD8292264C700F47A87 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E58BDD7292264C700F47A87 /* StatisticsViewController.swift */; };
+		8E58BDDA292264DB00F47A87 /* StatisticsScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E58BDD9292264DB00F47A87 /* StatisticsScreen.storyboard */; };
+		8E58BDDC29227AD100F47A87 /* CategoryEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E58BDDB29227AD100F47A87 /* CategoryEnum.swift */; };
+		8E58BDDE2923C1FF00F47A87 /* RealmCollection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E58BDDD2923C1FF00F47A87 /* RealmCollection+Extension.swift */; };
 		8EE665152915295900A94599 /* SignInView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EE665142915295900A94599 /* SignInView.xib */; };
 		8EE6651A2916793800A94599 /* SubscriptionsScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EE665192916793800A94599 /* SubscriptionsScreen.storyboard */; };
 		8EE6651C2916795300A94599 /* SubscriptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE6651B2916795300A94599 /* SubscriptionsViewController.swift */; };
@@ -58,6 +62,10 @@
 		8E4EB4912913ED2800633996 /* GreetingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GreetingView.xib; sourceTree = "<group>"; };
 		8E4EB495291520C000633996 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		8E4EB498291520E400633996 /* SignUpScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpScreen.storyboard; sourceTree = "<group>"; };
+		8E58BDD7292264C700F47A87 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
+		8E58BDD9292264DB00F47A87 /* StatisticsScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StatisticsScreen.storyboard; sourceTree = "<group>"; };
+		8E58BDDB29227AD100F47A87 /* CategoryEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryEnum.swift; sourceTree = "<group>"; };
+		8E58BDDD2923C1FF00F47A87 /* RealmCollection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealmCollection+Extension.swift"; sourceTree = "<group>"; };
 		8EE665142915295900A94599 /* SignInView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignInView.xib; sourceTree = "<group>"; };
 		8EE665192916793800A94599 /* SubscriptionsScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SubscriptionsScreen.storyboard; sourceTree = "<group>"; };
 		8EE6651B2916795300A94599 /* SubscriptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsViewController.swift; sourceTree = "<group>"; };
@@ -138,11 +146,12 @@
 		8E4EB48A2913DFDA00633996 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				8EE6654C2919967F00A94599 /* Subscription Info */,
-				8EE6653F2918EE1C00A94599 /* Add Subscription */,
 				8E4EB4892913DF7100633996 /* Sign In */,
 				8E4EB497291520C700633996 /* Sign Up */,
 				8EE665182916790D00A94599 /* Subscriptions */,
+				8EE6653F2918EE1C00A94599 /* Add Subscription */,
+				8EE6654C2919967F00A94599 /* Subscription Info */,
+				8E58BDD6292264A000F47A87 /* Statistics */,
 				8EE6652529167A3E00A94599 /* Base */,
 			);
 			path = Screens;
@@ -179,6 +188,15 @@
 			path = "Sign Up";
 			sourceTree = "<group>";
 		};
+		8E58BDD6292264A000F47A87 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				8E58BDD7292264C700F47A87 /* StatisticsViewController.swift */,
+				8E58BDD9292264DB00F47A87 /* StatisticsScreen.storyboard */,
+			);
+			path = Statistics;
+			sourceTree = "<group>";
+		};
 		8EE665182916790D00A94599 /* Subscriptions */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +225,7 @@
 				8EE66539291812A800A94599 /* UserDefaultsKeys.swift */,
 				8EE66551291A712000A94599 /* ToolbarPickerView.swift */,
 				8EE66557291A8AF100A94599 /* UIDatePickerTextField+Extension.swift */,
+				8E58BDDD2923C1FF00F47A87 /* RealmCollection+Extension.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -271,6 +290,7 @@
 			children = (
 				8EE66554291A758300A94599 /* PickerTypeEnum.swift */,
 				8EE6655B291BD7A400A94599 /* PaymentCycleEnum.swift */,
+				8E58BDDB29227AD100F47A87 /* CategoryEnum.swift */,
 			);
 			path = Type;
 			sourceTree = "<group>";
@@ -353,6 +373,7 @@
 				8E2C64DB2913CDC5001FD8C8 /* Assets.xcassets in Resources */,
 				8E4EB499291520E400633996 /* SignUpScreen.storyboard in Resources */,
 				8EE6651A2916793800A94599 /* SubscriptionsScreen.storyboard in Resources */,
+				8E58BDDA292264DB00F47A87 /* StatisticsScreen.storyboard in Resources */,
 				8EE665452918EE5C00A94599 /* AddSubscriptionTableViewCell.xib in Resources */,
 				8EE665492918EE8B00A94599 /* AddSubscriptionScreen.storyboard in Resources */,
 				8EE66550291996C900A94599 /* SubscriptionInfoScreen.storyboard in Resources */,
@@ -370,8 +391,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E4EB496291520C000633996 /* SignUpViewController.swift in Sources */,
+				8E58BDDC29227AD100F47A87 /* CategoryEnum.swift in Sources */,
 				8EE665442918EE5C00A94599 /* AddSubscriptionTableViewCell.swift in Sources */,
 				8EE66555291A758300A94599 /* PickerTypeEnum.swift in Sources */,
+				8E58BDD8292264C700F47A87 /* StatisticsViewController.swift in Sources */,
 				8EE66563291D3A5500A94599 /* SubscriptionEnum.swift in Sources */,
 				8EE665362916A01000A94599 /* UIView+Extension.swift in Sources */,
 				8EE6655A291BA86E00A94599 /* UserSubscription.swift in Sources */,
@@ -380,6 +403,7 @@
 				8E2C64D62913CDC0001FD8C8 /* SignInViewController.swift in Sources */,
 				8EE6655F291D073F00A94599 /* SubscriptionCollectionViewCell.swift in Sources */,
 				8E4EB4902913ED0A00633996 /* SignInView.swift in Sources */,
+				8E58BDDE2923C1FF00F47A87 /* RealmCollection+Extension.swift in Sources */,
 				8EE6652929167C6200A94599 /* Alert+ViewControllerExtension.swift in Sources */,
 				8EE6653A291812A800A94599 /* UserDefaultsKeys.swift in Sources */,
 				8EE665382917BECF00A94599 /* String+OptionalExtension.swift in Sources */,

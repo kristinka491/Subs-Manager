@@ -35,7 +35,8 @@ class RealmDataStore {
                              amount: String,
                              paymentCycle: String,
                              paymentDate: String,
-                             remindMe: String) -> Bool {
+                             remindMe: String,
+                             category: String) -> Bool {
         if let currentUserLogin = UserDefaults.standard.string(forKey: UserDefaultsKeys.currentUserLogin),
             let currentUser = realm?.object(ofType: User.self,
                                           forPrimaryKey: currentUserLogin) {
@@ -47,6 +48,7 @@ class RealmDataStore {
                 userSubscription.paymentCycle = paymentCycle
                 userSubscription.paymentDate = paymentDate
                 userSubscription.remindMe = remindMe
+                userSubscription.category = category
 
                 currentUser.subscriptions.append(userSubscription)
             }
@@ -86,7 +88,8 @@ class RealmDataStore {
                             amount: String,
                             paymentCycle: String,
                             paymentDate: String,
-                            remindMe: String) -> Bool {
+                            remindMe: String,
+                            category: String) -> Bool {
         if let userSubscription = realm?.object(ofType: UserSubscription.self,
                                                 forPrimaryKey: subscriptionId) {
             try? realm?.write {
@@ -95,6 +98,7 @@ class RealmDataStore {
                 userSubscription.paymentCycle = paymentCycle
                 userSubscription.paymentDate = paymentDate
                 userSubscription.remindMe = remindMe
+                userSubscription.category = category
             }
             return true
         }

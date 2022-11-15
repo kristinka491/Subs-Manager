@@ -16,6 +16,7 @@ class SubscriptionInfoViewController: SetUpKeyboardViewController {
     @IBOutlet weak var paymentDateTextField: UITextField!
     @IBOutlet weak var paymentCycleTextField: UITextField!
     @IBOutlet weak var remindMeTextField: UITextField!
+    @IBOutlet weak var categoryTextField: UITextField!
     @IBOutlet weak var addButton: UIButton!
 
     enum TypeOfController: String {
@@ -42,7 +43,7 @@ class SubscriptionInfoViewController: SetUpKeyboardViewController {
     private var isEnable: Bool {
         return !currencyTextField.text.isEmptyOrNil && !amountTextField.text.isEmptyOrNil
             && !paymentDateTextField.text.isEmptyOrNil && !paymentCycleTextField.text.isEmptyOrNil
-            && !remindMeTextField.text.isEmptyOrNil
+            && !remindMeTextField.text.isEmptyOrNil && !categoryTextField.text.isEmptyOrNil
     }
 
     private var isChangedData: Bool {
@@ -50,7 +51,7 @@ class SubscriptionInfoViewController: SetUpKeyboardViewController {
             if let userSubscription = userSubscription {
                 return userSubscription.currency != currencyTextField.text || userSubscription.amount != amountTextField.text
                 || userSubscription.paymentDate != paymentDateTextField.text || userSubscription.paymentCycle != paymentCycleTextField.text
-                || userSubscription.remindMe != remindMeTextField.text
+                || userSubscription.remindMe != remindMeTextField.text ||  userSubscription.category != categoryTextField.text
             }
             return true
         }
@@ -84,6 +85,7 @@ class SubscriptionInfoViewController: SetUpKeyboardViewController {
                 paymentDateTextField.text = "\(userSubscription.paymentDate)"
                 paymentCycleTextField.text = "\(userSubscription.paymentCycle)"
                 remindMeTextField.text = "\(userSubscription.remindMe)"
+                categoryTextField.text = "\(userSubscription.category)"
             }
         }
     }
@@ -106,7 +108,7 @@ class SubscriptionInfoViewController: SetUpKeyboardViewController {
     }
 
     private func setUpPicker() {
-        [currencyTextField, remindMeTextField, paymentCycleTextField].forEach { texField in
+        [currencyTextField, remindMeTextField, paymentCycleTextField, categoryTextField].forEach { texField in
             texField?.inputView = pickerView
             texField?.inputAccessoryView = pickerView.toolbar
         }
@@ -146,7 +148,8 @@ class SubscriptionInfoViewController: SetUpKeyboardViewController {
                                                                          amount: amountTextField.text ?? "",
                                                                          paymentCycle: paymentCycleTextField.text ?? "",
                                                                          paymentDate: paymentDateTextField.text ?? "",
-                                                                         remindMe: remindMeTextField.text ?? "")
+                                                                         remindMe: remindMeTextField.text ?? "",
+                                                                         category: categoryTextField.text ?? "")
         
         if !isUserSubscriptionSaved {
             moveToSignInScreen()
@@ -167,7 +170,8 @@ class SubscriptionInfoViewController: SetUpKeyboardViewController {
                                                                         amount: amountTextField.text ?? "",
                                                                         paymentCycle: paymentCycleTextField.text ?? "",
                                                                         paymentDate: paymentDateTextField.text ?? "",
-                                                                        remindMe: remindMeTextField.text ?? "")
+                                                                        remindMe: remindMeTextField.text ?? "",
+                                                                        category: categoryTextField.text ?? "")
         if !userSubscriptionUpdated {
             
         } else {
@@ -208,6 +212,8 @@ extension SubscriptionInfoViewController: UIPickerViewDelegate, UIPickerViewData
             remindMeTextField.text = selectedData
         case .paymentCycle:
             paymentCycleTextField.text = selectedData
+        case .category:
+            categoryTextField.text = selectedData
         }
     }
 }
@@ -229,6 +235,8 @@ extension SubscriptionInfoViewController: ToolbarPickerViewDelegate {
             remindMeTextField.resignFirstResponder()
         case .paymentCycle:
             paymentCycleTextField.resignFirstResponder()
+        case .category:
+            categoryTextField.resignFirstResponder()
         }
     }
 
@@ -243,6 +251,9 @@ extension SubscriptionInfoViewController: ToolbarPickerViewDelegate {
         case .paymentCycle:
             paymentCycleTextField.text = nil
             paymentCycleTextField.resignFirstResponder()
+        case .category:
+            categoryTextField.text = nil
+            categoryTextField.resignFirstResponder()
         }
     }
 }
@@ -261,6 +272,8 @@ extension SubscriptionInfoViewController: UITextFieldDelegate {
             currentSelectedTextFieldType = .remindMe
         case paymentCycleTextField:
             currentSelectedTextFieldType = .paymentCycle
+        case categoryTextField:
+            currentSelectedTextFieldType = .category
         default:
             break
         }

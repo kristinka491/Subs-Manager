@@ -13,15 +13,35 @@ class SubscriptionsViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var helloNameLabel: UILabel!
     @IBOutlet weak var allExpensesLabel: UILabel!
+    @IBOutlet weak var filterButton: UIButton!
+    @IBOutlet weak var menuView: UIView!
 
     private let realmDataStore = RealmDataStore.shared
+    private var chosenCategory: CategoryEnum?
     private var user: User?
     private var userNotification: NotificationToken?
+    private var isButtonActive = false
+
+    private var filteredData: [UserSubscription] {
+        guard let chosenCategory = chosenCategory else {
+            return user?.subscriptions.toArray() ?? []
+        }
+        return user?.subscriptions.filter { $0.category == chosenCategory.rawValue } ?? []
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpView()
         getCurrentUser()
         setUpCollectionView()
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        let touch = touches.first
+        if touch?.view != menuView {
+            menuView.isHidden = true
+        }
     }
 
     deinit {
@@ -36,12 +56,38 @@ class SubscriptionsViewController: UIViewController {
     }
 
     @IBAction func tappedStatisticsButton(_ sender: UIButton) {
-
+        let storyBoard = UIStoryboard(name: "StatisticsScreen", bundle: nil)
+        let statisticsViewController = storyBoard.instantiateViewController(withIdentifier: "StatisticsScreen")
+        navigationController?.pushViewController(statisticsViewController, animated: true)
     }
 
     @IBAction func tappedFilterButton(_ sender: UIButton) {
-
+        if isButtonActive {
+            menuView.isHidden = true
+        } else {
+            menuView.isHidden = false
+        }
+        isButtonActive = !isButtonActive
     }
+
+    @IBAction func tappedCategoryButton(_ sender: UIButton) {
+        var chosenCategory: CategoryEnum?
+        for category in CategoryEnum.allCases {
+            if category.tag == sender.tag {
+                chosenCategory = category
+                break
+            }
+        }
+        self.chosenCategory = chosenCategory
+        menuView.isHidden = true
+        collectionView.reloadData()
+    }
+
+    private func setUpView() {
+        menuView.layer.cornerRadius = 20
+        menuView.isHidden = true
+    }
+
 
     private func setUpCollectionView() {
         let layout = UICollectionViewFlowLayout()
@@ -73,15 +119,13 @@ class SubscriptionsViewController: UIViewController {
 extension SubscriptionsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return user?.subscriptions.count ?? 0
+        return filteredData.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "subscriptionCell", for: indexPath) as? SubscriptionCollectionViewCell {
-            if let userSubscription = user?.subscriptions {
-                cell.setUpCell(userSubscription[indexPath.row], delegate: self)
-                return cell
-            }
+            cell.setUpCell(filteredData[indexPath.row], delegate: self)
+            return cell
         }
         return UICollectionViewCell()
     }
@@ -91,13 +135,13 @@ extension SubscriptionsViewController: UICollectionViewDelegate, UICollectionVie
         let spaceBetweenCells = 5
         let screenWidth = UIScreen.main.bounds.width
         let cellWidth = (Int(screenWidth) - spaceBetweenCells * (numberOfCellsInRow + 1)) / numberOfCellsInRow
-        return CGSize(width: cellWidth, height: 240)
+        return CGSize(width: cellWidth, height: 250)
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyBoard = UIStoryboard(name: "SubscriptionInfoScreen", bundle: nil)
         if let subscriptionInfoViewController = storyBoard.instantiateViewController(withIdentifier: "SubscriptionInfoScreen") as? SubscriptionInfoViewController {
-            subscriptionInfoViewController.setUp(with: user?.subscriptions[indexPath.row], typeOfController: .edit)
+            subscriptionInfoViewController.setUp(with: filteredData[indexPath.row], typeOfController: .edit)
             navigationController?.pushViewController(subscriptionInfoViewController, animated: true)
         }
     }
