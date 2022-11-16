@@ -102,6 +102,7 @@ class SubscriptionsViewController: UIViewController {
             user = realmDataStore.getUser(with: currentUserLogin)
 
             userNotification = user?.subscriptions.observe { [weak self] _ in
+                self?.user?.subscriptions.forEach { self?.realmDataStore.updatePaymentDateIfNeeded(model: $0) }
                 self?.collectionView.reloadData()
             }
             setUpLabels()
@@ -135,7 +136,7 @@ extension SubscriptionsViewController: UICollectionViewDelegate, UICollectionVie
         let spaceBetweenCells = 5
         let screenWidth = UIScreen.main.bounds.width
         let cellWidth = (Int(screenWidth) - spaceBetweenCells * (numberOfCellsInRow + 1)) / numberOfCellsInRow
-        return CGSize(width: cellWidth, height: 250)
+        return CGSize(width: cellWidth, height: 270)
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

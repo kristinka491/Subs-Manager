@@ -134,12 +134,12 @@ class SubscriptionInfoViewController: SetUpKeyboardViewController {
     }
 
     @objc func dateSelected() {
-           if let datePicker = paymentDateTextField.inputView as? UIDatePicker {
-               let dateFormatter = DateFormatter()
-               dateFormatter.dateStyle = .medium
-               paymentDateTextField.text = dateFormatter.string(from: datePicker.date)
-           }
-           paymentDateTextField.resignFirstResponder()
+        if let datePicker = paymentDateTextField.inputView as? UIDatePicker {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .medium
+            paymentDateTextField.text = dateFormatter.string(from: datePicker.date)
+        }
+        paymentDateTextField.resignFirstResponder()
     }
 
     private func addUserSubscription() {
