@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum PaymentCycleEnum: String {
+enum PaymentCycleEnum: String, CaseIterable {
     case everyTwoWeeks = "Every two weeks"
     case everyMonth = "Every month"
     case everyYear = "Every year"

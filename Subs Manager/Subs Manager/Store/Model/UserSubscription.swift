@@ -13,7 +13,7 @@ class UserSubscription: Object {
     @Persisted var subscriptionName = ""
     @Persisted var currency = ""
     @Persisted var amount = ""
-    @Persisted var paymentDate = ""
+    @Persisted var paymentDate = Date()
     @Persisted var paymentCycle = ""
     @Persisted var remindMe = ""
     @Persisted var category = ""

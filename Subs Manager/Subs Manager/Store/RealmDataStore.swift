@@ -14,6 +14,7 @@ class RealmDataStore {
     private init() {}
 
     private let realm = try? Realm()
+    private let notification = NotificationManager()
 
     func addUser(name: String,
                  login: String,
@@ -40,18 +41,19 @@ class RealmDataStore {
         if let currentUserLogin = UserDefaults.standard.string(forKey: UserDefaultsKeys.currentUserLogin),
             let currentUser = realm?.object(ofType: User.self,
                                           forPrimaryKey: currentUserLogin) {
+            let userSubscription = UserSubscription()
             try? realm?.write {
-                let userSubscription = UserSubscription()
                 userSubscription.subscriptionName = subscriptionName
                 userSubscription.currency = currency
                 userSubscription.amount = amount
                 userSubscription.paymentCycle = paymentCycle
-                userSubscription.paymentDate = paymentDate
+                userSubscription.paymentDate = DateFormatterHepler.getDate(from: paymentDate) 
                 userSubscription.remindMe = remindMe
                 userSubscription.category = category
 
                 currentUser.subscriptions.append(userSubscription)
             }
+            notification.setupNotifications(model: userSubscription)
             return true
         }
         return false
@@ -75,6 +77,7 @@ class RealmDataStore {
             try? realm?.write {
                 realm?.delete(userSubscription)
             }
+            notification.cancelSubscriptionNotifications(with: id)
         }
     }
 
@@ -91,10 +94,11 @@ class RealmDataStore {
                 userSubscription.currency = currency
                 userSubscription.amount = amount
                 userSubscription.paymentCycle = paymentCycle
-                userSubscription.paymentDate = paymentDate
+                userSubscription.paymentDate = DateFormatterHepler.getDate(from: paymentDate) 
                 userSubscription.remindMe = remindMe
                 userSubscription.category = category
             }
+            notification.setupNotifications(model: userSubscription)
             return true
         }
         return false
@@ -110,10 +114,9 @@ class RealmDataStore {
     }
 
     func updatePaymentDateIfNeeded(model: UserSubscription) {
-        let paymentDate = getDate(from: model.paymentDate)
-        if paymentDate < Date() {
+        if model.paymentDate < Date() {
             let paymentCycle = PaymentCycleEnum(rawValue: model.paymentCycle) ?? .everyTwoWeeks
-            let periodBetweenDates = periodBetweenDates(paymentDate, paymentCycle: paymentCycle)
+            let periodBetweenDates = periodBetweenDates(model.paymentDate, paymentCycle: paymentCycle)
             var nextPaymentDate = Date()
 
             switch paymentCycle {
@@ -121,33 +124,22 @@ class RealmDataStore {
                 let numberOfDays = (Int(periodBetweenDates.days / 14) + 1) * 14
                 nextPaymentDate = Calendar.current.date(byAdding: PaymentCycleEnum.everyTwoWeeks.dateComponent,
                                                         value: numberOfDays,
-                                                        to: paymentDate) ?? Date()
+                                                        to: model.paymentDate) ?? Date()
             case .everyMonth:
                 nextPaymentDate = Calendar.current.date(byAdding: PaymentCycleEnum.everyMonth.dateComponent,
                                                         value: periodBetweenDates.months + 1,
-                                                        to: paymentDate) ?? Date()
+                                                        to: model.paymentDate) ?? Date()
             case .everyYear:
                 nextPaymentDate = Calendar.current.date(byAdding: PaymentCycleEnum.everyYear.dateComponent,
                                                         value: periodBetweenDates.years + 1,
-                                                        to: paymentDate) ?? Date()
+                                                        to: model.paymentDate) ?? Date()
             }
 
             try? realm?.write {
-                model.paymentDate = getDateString(from: nextPaymentDate)
+                model.paymentDate = nextPaymentDate
             }
+            notification.setupNotifications(model: model)
         }
-    }
-
-    private func getDateString(from date: Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .medium
-        return dateFormatter.string(from: date)
-    }
-
-    private func getDate(from string: String) -> Date {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .medium
-        return dateFormatter.date(from: string) ?? Date()
     }
 
     private func periodBetweenDates(_ paymentDate: Date,

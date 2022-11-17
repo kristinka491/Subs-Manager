@@ -39,24 +39,11 @@ class SubscriptionCollectionViewCell: UICollectionViewCell {
         subscriptionImageView.image = SubscriptionEnum(rawValue: userSubscription.subscriptionName)?.image
         subscriptionID = userSubscription.id
 
-        let paymentDate = getPaymentDate(with: userSubscription.paymentDate)
-        dateOfNextPaymentLabel.text = getPaymentDateString(with: paymentDate)
+        dateOfNextPaymentLabel.text = DateFormatterHepler.getDateString(from: userSubscription.paymentDate)
         self.delegate = delegate
     }
 
     private func setUpView() {
         subView.layer.cornerRadius = 20
-    }
-
-    private func getPaymentDate(with date: String) -> Date {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .medium
-        return dateFormatter.date(from: date) ?? Date()
-    }
-
-    private func getPaymentDateString(with date: Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd.MM.yy"
-        return dateFormatter.string(from: date)
     }
 }

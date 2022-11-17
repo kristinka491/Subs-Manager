@@ -17,8 +17,11 @@ class SubscriptionsViewController: UIViewController {
     @IBOutlet weak var menuView: UIView!
 
     private let realmDataStore = RealmDataStore.shared
+    private let notification = NotificationManager()
     private var chosenCategory: CategoryEnum?
+    private var chosenCurrency: CurrencyEnum = .usd
     private var user: User?
+    private var userSubscriptions: UserSubscription?
     private var userNotification: NotificationToken?
     private var isButtonActive = false
 
@@ -27,6 +30,12 @@ class SubscriptionsViewController: UIViewController {
             return user?.subscriptions.toArray() ?? []
         }
         return user?.subscriptions.filter { $0.category == chosenCategory.rawValue } ?? []
+    }
+
+    private var reducedAmount: Int {
+        return user?.subscriptions.filter { $0.currency == self.chosenCurrency.rawValue }
+                                .compactMap { Int($0.amount) }
+                                .reduce(0, { $0 + $1 }) ?? 0
     }
 
     override func viewDidLoad() {
@@ -48,20 +57,20 @@ class SubscriptionsViewController: UIViewController {
         userNotification?.invalidate()
     }
 
-    @IBAction func tappedAddButton(_ sender: UIButton) {
+    @IBAction private func tappedAddButton(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "AddSubscriptionScreen", bundle: nil)
         let controller = UINavigationController(rootViewController: storyboard.instantiateViewController(withIdentifier: "AddSubscriptionScreen"))
         controller.modalPresentationStyle = .formSheet
         present(controller, animated: true, completion: nil)
     }
 
-    @IBAction func tappedStatisticsButton(_ sender: UIButton) {
+    @IBAction private func tappedStatisticsButton(_ sender: UIButton) {
         let storyBoard = UIStoryboard(name: "StatisticsScreen", bundle: nil)
         let statisticsViewController = storyBoard.instantiateViewController(withIdentifier: "StatisticsScreen")
         navigationController?.pushViewController(statisticsViewController, animated: true)
     }
 
-    @IBAction func tappedFilterButton(_ sender: UIButton) {
+    @IBAction private func tappedFilterButton(_ sender: UIButton) {
         if isButtonActive {
             menuView.isHidden = true
         } else {
@@ -70,7 +79,7 @@ class SubscriptionsViewController: UIViewController {
         isButtonActive = !isButtonActive
     }
 
-    @IBAction func tappedCategoryButton(_ sender: UIButton) {
+    @IBAction private func tappedCategoryButton(_ sender: UIButton) {
         var chosenCategory: CategoryEnum?
         for category in CategoryEnum.allCases {
             if category.tag == sender.tag {
@@ -83,11 +92,14 @@ class SubscriptionsViewController: UIViewController {
         collectionView.reloadData()
     }
 
+    @IBAction private func tappedArrowUpButton(_ sender: UIButton) {
+
+    }
+
     private func setUpView() {
         menuView.layer.cornerRadius = 20
         menuView.isHidden = true
     }
-
 
     private func setUpCollectionView() {
         let layout = UICollectionViewFlowLayout()
@@ -102,7 +114,10 @@ class SubscriptionsViewController: UIViewController {
             user = realmDataStore.getUser(with: currentUserLogin)
 
             userNotification = user?.subscriptions.observe { [weak self] _ in
-                self?.user?.subscriptions.forEach { self?.realmDataStore.updatePaymentDateIfNeeded(model: $0) }
+                self?.user?.subscriptions.forEach {
+                    self?.realmDataStore.updatePaymentDateIfNeeded(model: $0)
+                }
+                self?.setUpAmountLabel()
                 self?.collectionView.reloadData()
             }
             setUpLabels()
@@ -111,6 +126,10 @@ class SubscriptionsViewController: UIViewController {
 
     private func setUpLabels() {
         helloNameLabel.text = "Hello, \(user?.name ?? "")"
+    }
+
+    private func setUpAmountLabel() {
+        allExpensesLabel.text = "\(chosenCurrency.rawValue) \(reducedAmount)" + ",00"
     }
 }
 

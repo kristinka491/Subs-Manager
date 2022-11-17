@@ -21,6 +21,10 @@
 		8E58BDDA292264DB00F47A87 /* StatisticsScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E58BDD9292264DB00F47A87 /* StatisticsScreen.storyboard */; };
 		8E58BDDC29227AD100F47A87 /* CategoryEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E58BDDB29227AD100F47A87 /* CategoryEnum.swift */; };
 		8E58BDDE2923C1FF00F47A87 /* RealmCollection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E58BDDD2923C1FF00F47A87 /* RealmCollection+Extension.swift */; };
+		8E58BDE02926356600F47A87 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E58BDDF2926356600F47A87 /* NotificationManager.swift */; };
+		8E58BDE229263A7A00F47A87 /* RemindMeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E58BDE129263A7A00F47A87 /* RemindMeEnum.swift */; };
+		8E58BDE429263E9100F47A87 /* DateFormatterHepler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E58BDE329263E9100F47A87 /* DateFormatterHepler.swift */; };
+		8E58BDE629266EAD00F47A87 /* CurrencyEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E58BDE529266EAD00F47A87 /* CurrencyEnum.swift */; };
 		8EE665152915295900A94599 /* SignInView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EE665142915295900A94599 /* SignInView.xib */; };
 		8EE6651A2916793800A94599 /* SubscriptionsScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EE665192916793800A94599 /* SubscriptionsScreen.storyboard */; };
 		8EE6651C2916795300A94599 /* SubscriptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE6651B2916795300A94599 /* SubscriptionsViewController.swift */; };
@@ -66,6 +70,10 @@
 		8E58BDD9292264DB00F47A87 /* StatisticsScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StatisticsScreen.storyboard; sourceTree = "<group>"; };
 		8E58BDDB29227AD100F47A87 /* CategoryEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryEnum.swift; sourceTree = "<group>"; };
 		8E58BDDD2923C1FF00F47A87 /* RealmCollection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealmCollection+Extension.swift"; sourceTree = "<group>"; };
+		8E58BDDF2926356600F47A87 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		8E58BDE129263A7A00F47A87 /* RemindMeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindMeEnum.swift; sourceTree = "<group>"; };
+		8E58BDE329263E9100F47A87 /* DateFormatterHepler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterHepler.swift; sourceTree = "<group>"; };
+		8E58BDE529266EAD00F47A87 /* CurrencyEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyEnum.swift; sourceTree = "<group>"; };
 		8EE665142915295900A94599 /* SignInView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignInView.xib; sourceTree = "<group>"; };
 		8EE665192916793800A94599 /* SubscriptionsScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SubscriptionsScreen.storyboard; sourceTree = "<group>"; };
 		8EE6651B2916795300A94599 /* SubscriptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsViewController.swift; sourceTree = "<group>"; };
@@ -226,6 +234,8 @@
 				8EE66551291A712000A94599 /* ToolbarPickerView.swift */,
 				8EE66557291A8AF100A94599 /* UIDatePickerTextField+Extension.swift */,
 				8E58BDDD2923C1FF00F47A87 /* RealmCollection+Extension.swift */,
+				8E58BDDF2926356600F47A87 /* NotificationManager.swift */,
+				8E58BDE329263E9100F47A87 /* DateFormatterHepler.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -291,6 +301,8 @@
 				8EE66554291A758300A94599 /* PickerTypeEnum.swift */,
 				8EE6655B291BD7A400A94599 /* PaymentCycleEnum.swift */,
 				8E58BDDB29227AD100F47A87 /* CategoryEnum.swift */,
+				8E58BDE129263A7A00F47A87 /* RemindMeEnum.swift */,
+				8E58BDE529266EAD00F47A87 /* CurrencyEnum.swift */,
 			);
 			path = Type;
 			sourceTree = "<group>";
@@ -391,17 +403,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E4EB496291520C000633996 /* SignUpViewController.swift in Sources */,
+				8E58BDE629266EAD00F47A87 /* CurrencyEnum.swift in Sources */,
 				8E58BDDC29227AD100F47A87 /* CategoryEnum.swift in Sources */,
 				8EE665442918EE5C00A94599 /* AddSubscriptionTableViewCell.swift in Sources */,
 				8EE66555291A758300A94599 /* PickerTypeEnum.swift in Sources */,
 				8E58BDD8292264C700F47A87 /* StatisticsViewController.swift in Sources */,
 				8EE66563291D3A5500A94599 /* SubscriptionEnum.swift in Sources */,
 				8EE665362916A01000A94599 /* UIView+Extension.swift in Sources */,
+				8E58BDE429263E9100F47A87 /* DateFormatterHepler.swift in Sources */,
 				8EE6655A291BA86E00A94599 /* UserSubscription.swift in Sources */,
 				8EE665472918EE7700A94599 /* AddSubscriptionViewController.swift in Sources */,
 				8EE6652C29167E5F00A94599 /* RealmDataStore.swift in Sources */,
 				8E2C64D62913CDC0001FD8C8 /* SignInViewController.swift in Sources */,
 				8EE6655F291D073F00A94599 /* SubscriptionCollectionViewCell.swift in Sources */,
+				8E58BDE02926356600F47A87 /* NotificationManager.swift in Sources */,
 				8E4EB4902913ED0A00633996 /* SignInView.swift in Sources */,
 				8E58BDDE2923C1FF00F47A87 /* RealmCollection+Extension.swift in Sources */,
 				8EE6652929167C6200A94599 /* Alert+ViewControllerExtension.swift in Sources */,
@@ -416,6 +431,7 @@
 				8EE6651C2916795300A94599 /* SubscriptionsViewController.swift in Sources */,
 				8EE6652729167B0F00A94599 /* SetUpKeyboardViewController.swift in Sources */,
 				8EE6655C291BD7A600A94599 /* PaymentCycleEnum.swift in Sources */,
+				8E58BDE229263A7A00F47A87 /* RemindMeEnum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

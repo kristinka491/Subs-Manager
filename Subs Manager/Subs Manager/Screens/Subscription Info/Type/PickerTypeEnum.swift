@@ -16,13 +16,13 @@ enum PickerTypeEnum {
     var array: [String] {
         switch self {
         case .currency:
-            return ["USD($)", "EUR(€)", "GBP(£)", "CNY(¥)", "PLN(zł)", "CAD($)"]
+            return CurrencyEnum.allCases.map { $0.rawValue }
         case .remindMe:
-            return ["Never", "This day", "The day before", "Three days before", "Five days before", "One week before", "Ten days before", "Two weeks before"]
+            return ["Never"] + RemindMeEnum.allCases.map { $0.rawValue }
         case .paymentCycle:
-            return ["Every two weeks", "Every month", "Every year"]
+            return PaymentCycleEnum.allCases.map { $0.rawValue }
         case .category:
-            return ["Entertainment", "Utilities", "Music", "Work"]
+            return CategoryEnum.allCases.map { $0.rawValue }
         }
     }
 }

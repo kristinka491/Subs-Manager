@@ -50,7 +50,7 @@ class SubscriptionInfoViewController: SetUpKeyboardViewController {
         if typeOfController == .edit {
             if let userSubscription = userSubscription {
                 return userSubscription.currency != currencyTextField.text || userSubscription.amount != amountTextField.text
-                || userSubscription.paymentDate != paymentDateTextField.text || userSubscription.paymentCycle != paymentCycleTextField.text
+                || DateFormatterHepler.getDateString(from: userSubscription.paymentDate) != paymentDateTextField.text || userSubscription.paymentCycle != paymentCycleTextField.text
                 || userSubscription.remindMe != remindMeTextField.text ||  userSubscription.category != categoryTextField.text
             }
             return true
@@ -135,9 +135,7 @@ class SubscriptionInfoViewController: SetUpKeyboardViewController {
 
     @objc func dateSelected() {
         if let datePicker = paymentDateTextField.inputView as? UIDatePicker {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateStyle = .medium
-            paymentDateTextField.text = dateFormatter.string(from: datePicker.date)
+            paymentDateTextField.text = DateFormatterHepler.getDateString(from: datePicker.date)
         }
         paymentDateTextField.resignFirstResponder()
     }
