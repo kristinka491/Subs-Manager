@@ -93,12 +93,17 @@ class SubscriptionsViewController: UIViewController {
     }
 
     @IBAction private func tappedArrowUpButton(_ sender: UIButton) {
-
+        setUpNextAmount()
     }
 
     private func setUpView() {
         menuView.layer.cornerRadius = 20
         menuView.isHidden = true
+    }
+
+    private func setUpNextAmount() {
+        chosenCurrency = chosenCurrency.next()
+        setUpAmountLabel()
     }
 
     private func setUpCollectionView() {
@@ -129,7 +134,11 @@ class SubscriptionsViewController: UIViewController {
     }
 
     private func setUpAmountLabel() {
-        allExpensesLabel.text = "\(chosenCurrency.rawValue) \(reducedAmount)" + ",00"
+        if reducedAmount != 0 {
+            allExpensesLabel.text = "\(chosenCurrency.rawValue) \(reducedAmount)" + ",00"
+        } else if reducedAmount == 0 && user?.subscriptions.count != 0 {
+            setUpNextAmount()
+        }
     }
 }
 
