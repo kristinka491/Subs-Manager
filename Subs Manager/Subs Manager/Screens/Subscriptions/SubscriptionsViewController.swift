@@ -21,7 +21,6 @@ class SubscriptionsViewController: UIViewController {
     private var chosenCategory: CategoryEnum?
     private var chosenCurrency: CurrencyEnum = .usd
     private var user: User?
-    private var userSubscriptions: UserSubscription?
     private var userNotification: NotificationToken?
     private var isButtonActive = false
 
@@ -66,8 +65,10 @@ class SubscriptionsViewController: UIViewController {
 
     @IBAction private func tappedStatisticsButton(_ sender: UIButton) {
         let storyBoard = UIStoryboard(name: "StatisticsScreen", bundle: nil)
-        let statisticsViewController = storyBoard.instantiateViewController(withIdentifier: "StatisticsScreen")
-        navigationController?.pushViewController(statisticsViewController, animated: true)
+        if let statisticsViewController = storyBoard.instantiateViewController(withIdentifier: "StatisticsScreen") as? StatisticsViewController {
+            statisticsViewController.setUp(with: user?.subscriptions.toArray())
+            navigationController?.pushViewController(statisticsViewController, animated: true)
+        }
     }
 
     @IBAction private func tappedFilterButton(_ sender: UIButton) {

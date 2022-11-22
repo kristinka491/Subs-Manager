@@ -12,6 +12,7 @@
 		8E2C64D92913CDC0001FD8C8 /* SignInScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E2C64D72913CDC0001FD8C8 /* SignInScreen.storyboard */; };
 		8E2C64DB2913CDC5001FD8C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E2C64DA2913CDC5001FD8C8 /* Assets.xcassets */; };
 		8E2C64DE2913CDC5001FD8C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E2C64DC2913CDC5001FD8C8 /* LaunchScreen.storyboard */; };
+		8E4E8CFA292CE16000429EA6 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 8E4E8CF9292CE16000429EA6 /* Charts */; };
 		8E4EB48E2913ECF400633996 /* GreetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4EB48D2913ECF400633996 /* GreetingView.swift */; };
 		8E4EB4902913ED0A00633996 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4EB48F2913ED0A00633996 /* SignInView.swift */; };
 		8E4EB4922913ED2800633996 /* GreetingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E4EB4912913ED2800633996 /* GreetingView.xib */; };
@@ -106,6 +107,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EE6653429167FC100A94599 /* RealmSwift in Frameworks */,
+				8E4E8CFA292CE16000429EA6 /* Charts in Frameworks */,
 				8EE6653229167FC100A94599 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -334,6 +336,7 @@
 			packageProductDependencies = (
 				8EE6653129167FC100A94599 /* Realm */,
 				8EE6653329167FC100A94599 /* RealmSwift */,
+				8E4E8CF9292CE16000429EA6 /* Charts */,
 			);
 			productName = "Subs Manager";
 			productReference = 8E2C64CE2913CDC0001FD8C8 /* Subs Manager.app */;
@@ -365,6 +368,7 @@
 			mainGroup = 8E2C64C52913CDC0001FD8C8;
 			packageReferences = (
 				8EE6653029167FC100A94599 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				8E4E8CF8292CE16000429EA6 /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = 8E2C64CF2913CDC0001FD8C8 /* Products */;
 			projectDirPath = "";
@@ -651,6 +655,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		8E4E8CF8292CE16000429EA6 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.0;
+			};
+		};
 		8EE6653029167FC100A94599 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift";
@@ -662,6 +674,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8E4E8CF9292CE16000429EA6 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8E4E8CF8292CE16000429EA6 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
 		8EE6653129167FC100A94599 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8EE6653029167FC100A94599 /* XCRemoteSwiftPackageReference "realm-swift" */;

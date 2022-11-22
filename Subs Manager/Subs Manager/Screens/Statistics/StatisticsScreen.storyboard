@@ -15,16 +15,50 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overview" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymh-lj-O0Q">
+                                <rect key="frame" x="16" y="64" width="382" height="30"/>
+                                <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Arb-Mc-i7u" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="16" y="114" width="382" height="336"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="statisticsScreen" translatesAutoresizingMaskIntoConstraints="NO" id="JmF-h0-XEM">
+                                <rect key="frame" x="16" y="460" width="382" height="382"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="JmF-h0-XEM" secondAttribute="height" multiplier="1:1" id="cKf-Qa-h5Y"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JmF-h0-XEM" firstAttribute="top" secondItem="Arb-Mc-i7u" secondAttribute="bottom" constant="10" id="I0D-GN-o3s"/>
+                            <constraint firstItem="Arb-Mc-i7u" firstAttribute="top" secondItem="ymh-lj-O0Q" secondAttribute="bottom" constant="20" id="Mf6-ib-OaU"/>
+                            <constraint firstItem="ymh-lj-O0Q" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="URO-73-aGD"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Arb-Mc-i7u" secondAttribute="trailing" constant="16" id="Wif-cu-ZVZ"/>
+                            <constraint firstItem="Arb-Mc-i7u" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="gpH-PL-P3d"/>
+                            <constraint firstItem="JmF-h0-XEM" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="jeC-Ap-fce"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ymh-lj-O0Q" secondAttribute="trailing" constant="16" id="kGN-fC-mRa"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="JmF-h0-XEM" secondAttribute="trailing" constant="16" id="oz2-BK-nA9"/>
+                            <constraint firstItem="ymh-lj-O0Q" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="vUd-bN-brz"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="JmF-h0-XEM" secondAttribute="bottom" constant="20" id="w1n-ee-np1"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pieChartView" destination="Arb-Mc-i7u" id="cCc-qt-C5D"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="83" y="29"/>
+            <point key="canvasLocation" x="82.608695652173921" y="28.794642857142854"/>
         </scene>
     </scenes>
     <resources>
+        <image name="statisticsScreen" width="624" height="457"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

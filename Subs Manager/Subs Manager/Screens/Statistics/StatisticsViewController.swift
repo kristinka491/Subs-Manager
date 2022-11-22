@@ -6,24 +6,62 @@
 //
 
 import UIKit
+import Charts
 
 class StatisticsViewController: UIViewController {
 
+    @IBOutlet weak var pieChartView: PieChartView!
+
+    private let realmDataStore = RealmDataStore.shared
+    private var subscriptionType: SubscriptionEnum?
+    private var userSubscriptions: [UserSubscription]?
+
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        customizeChart(dataPoints: userSubscriptions?.map { $0.subscriptionName } ?? [],
+                       values: userSubscriptions?.compactMap { Double($0.amount) } ?? [])
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setUp(with model: [UserSubscription]?) {
+        userSubscriptions = model
     }
-    */
 
+    private func customizeChart(dataPoints: [String], values: [Double]) {
+        var dataEntries: [ChartDataEntry] = []
+        for i in 0..<dataPoints.count {
+            let dataEntry = PieChartDataEntry(value: values[i], label: dataPoints[i], data: dataPoints[i] as AnyObject)
+            dataEntries.append(dataEntry)
+        }
+
+        let pieChartDataSet = PieChartDataSet(entries: dataEntries, label: "")
+        pieChartDataSet.colors = colorsOfCharts(numbersOfColor: userSubscriptions?.count ?? 0)
+        pieChartDataSet.entryLabelFont = UIFont(name: "Hiragino Mincho ProN", size: 13)
+        pieChartDataSet.entryLabelColor = .black
+        let pieChartData = PieChartData(dataSet: pieChartDataSet)
+        let format = NumberFormatter()
+        format.numberStyle = .none
+        let formatter = DefaultValueFormatter(formatter: format)
+        pieChartData.setValueFormatter(formatter)
+        pieChartView.data = pieChartData
+        pieChartView.legend.enabled = false
+        pieChartView.holeRadiusPercent = 0.4
+        pieChartView.data?.setValueTextColor(.black)
+        if let valueFont = UIFont(name: "Hiragino Mincho ProN", size: 13) {
+            pieChartView.data?.setValueFont(valueFont)
+            }
+        }
+
+    private func colorsOfCharts(numbersOfColor: Int) -> [UIColor] {
+        var colors = [UIColor]()
+        for _ in 0..<numbersOfColor {
+            userSubscriptions?.forEach { model in
+                if let color = SubscriptionEnum(rawValue: model.subscriptionName)?.color {
+                    colors.append(color)
+                }
+            }
+        }
+        return colors
+    }
 }
