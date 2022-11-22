@@ -40,7 +40,9 @@ class SignInViewController: SetUpKeyboardViewController {
     private func navigateToSubscriptionsScreen() {
         let storyBoard = UIStoryboard(name: "SubscriptionsScreen", bundle: nil)
         let subscriptionsViewController = storyBoard.instantiateViewController(withIdentifier: "SubscriptionsScreen")
-        navigationController?.pushViewController(subscriptionsViewController, animated: true)
+        let navigationViewController = UINavigationController(rootViewController: subscriptionsViewController)
+        view.window?.rootViewController = navigationViewController
+        view.window?.makeKeyAndVisible()
     }
 }
 

@@ -42,6 +42,7 @@ class SubscriptionsViewController: UIViewController {
         setUpView()
         getCurrentUser()
         setUpCollectionView()
+        setUpNavigationBar()
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -97,6 +98,21 @@ class SubscriptionsViewController: UIViewController {
         setUpNextAmount()
     }
 
+    @IBAction private func tappedLogOutButton(_ sender: UIButton) {
+        cleanSavedData()
+        moveToSignInScreen()
+    }
+
+    private func setUpNavigationBar() {
+        navigationController?.navigationBar.isHidden = true
+    }
+
+    private func cleanSavedData() {
+        UserDefaults.standard.removeObject(forKey: UserDefaultsKeys.currentUserLogin)
+        UserDefaults.standard.removeObject(forKey: UserDefaultsKeys.isUserLoggedIn)
+        UserDefaults.standard.removeObject(forKey: UserDefaultsKeys.isUserRemembered)
+    }
+
     private func setUpView() {
         menuView.layer.cornerRadius = 20
         menuView.isHidden = true
@@ -140,6 +156,14 @@ class SubscriptionsViewController: UIViewController {
         } else if reducedAmount == 0 && user?.subscriptions.count != 0 {
             setUpNextAmount()
         }
+    }
+
+    private func moveToSignInScreen() {
+        let storyBoard = UIStoryboard(name: "SignInScreen", bundle: nil)
+        let viewController = storyBoard.instantiateViewController(withIdentifier: "SignInScreen")
+        let navigationViewController = UINavigationController(rootViewController: viewController)
+        view.window?.rootViewController = navigationViewController
+        view.window?.makeKeyAndVisible()
     }
 }
 

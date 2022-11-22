@@ -16,12 +16,16 @@ class StatisticsViewController: UIViewController {
     private var subscriptionType: SubscriptionEnum?
     private var userSubscriptions: [UserSubscription]?
 
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
         customizeChart(dataPoints: userSubscriptions?.map { $0.subscriptionName } ?? [],
                        values: userSubscriptions?.compactMap { Double($0.amount) } ?? [])
+        navigationController?.navigationBar.isHidden = false
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.isHidden = true
     }
 
     func setUp(with model: [UserSubscription]?) {
