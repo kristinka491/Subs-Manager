@@ -289,6 +289,7 @@
             <point key="canvasLocation" x="-20.289855072463769" y="53.571428571428569"/>
         </scene>
     </scenes>
+    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="add" width="512" height="512"/>
         <image name="filter" width="512" height="512"/>

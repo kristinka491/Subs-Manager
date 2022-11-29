@@ -13,6 +13,7 @@
 		8E2C64DB2913CDC5001FD8C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E2C64DA2913CDC5001FD8C8 /* Assets.xcassets */; };
 		8E2C64DE2913CDC5001FD8C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E2C64DC2913CDC5001FD8C8 /* LaunchScreen.storyboard */; };
 		8E4E8CFA292CE16000429EA6 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 8E4E8CF9292CE16000429EA6 /* Charts */; };
+		8E4E8D00292E323B00429EA6 /* UINanigation+ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4E8CFF292E323A00429EA6 /* UINanigation+ViewControllerExtension.swift */; };
 		8E4EB48E2913ECF400633996 /* GreetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4EB48D2913ECF400633996 /* GreetingView.swift */; };
 		8E4EB4902913ED0A00633996 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4EB48F2913ED0A00633996 /* SignInView.swift */; };
 		8E4EB4922913ED2800633996 /* GreetingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E4EB4912913ED2800633996 /* GreetingView.xib */; };
@@ -62,6 +63,7 @@
 		8E2C64DA2913CDC5001FD8C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E2C64DD2913CDC5001FD8C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8E2C64DF2913CDC5001FD8C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E4E8CFF292E323A00429EA6 /* UINanigation+ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINanigation+ViewControllerExtension.swift"; sourceTree = "<group>"; };
 		8E4EB48D2913ECF400633996 /* GreetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingView.swift; sourceTree = "<group>"; };
 		8E4EB48F2913ED0A00633996 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		8E4EB4912913ED2800633996 /* GreetingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GreetingView.xib; sourceTree = "<group>"; };
@@ -134,13 +136,34 @@
 		8E2C64D02913CDC0001FD8C8 /* Subs Manager */ = {
 			isa = PBXGroup;
 			children = (
-				8EE66561291D3A3D00A94599 /* Type */,
+				8E4E8CFE292E2DF700429EA6 /* Manager */,
 				8EE6652A29167E4C00A94599 /* Store */,
 				8EE6652429167A3400A94599 /* Helper */,
 				8E4EB48A2913DFDA00633996 /* Screens */,
 				8E4EB48B2913DFF000633996 /* App */,
 			);
 			path = "Subs Manager";
+			sourceTree = "<group>";
+		};
+		8E4E8CFD292E2DD000429EA6 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				8EE6652829167C6200A94599 /* Alert+ViewControllerExtension.swift */,
+				8EE665352916A01000A94599 /* UIView+Extension.swift */,
+				8EE665372917BECF00A94599 /* String+OptionalExtension.swift */,
+				8EE66557291A8AF100A94599 /* UIDatePickerTextField+Extension.swift */,
+				8E58BDDD2923C1FF00F47A87 /* RealmCollection+Extension.swift */,
+				8E4E8CFF292E323A00429EA6 /* UINanigation+ViewControllerExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		8E4E8CFE292E2DF700429EA6 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				8E58BDDF2926356600F47A87 /* NotificationManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		8E4EB4892913DF7100633996 /* Sign In */ = {
@@ -229,14 +252,10 @@
 		8EE6652429167A3400A94599 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				8EE6652829167C6200A94599 /* Alert+ViewControllerExtension.swift */,
-				8EE665352916A01000A94599 /* UIView+Extension.swift */,
-				8EE665372917BECF00A94599 /* String+OptionalExtension.swift */,
+				8E4E8CFD292E2DD000429EA6 /* Extension */,
+				8EE66561291D3A3D00A94599 /* Type */,
 				8EE66539291812A800A94599 /* UserDefaultsKeys.swift */,
 				8EE66551291A712000A94599 /* ToolbarPickerView.swift */,
-				8EE66557291A8AF100A94599 /* UIDatePickerTextField+Extension.swift */,
-				8E58BDDD2923C1FF00F47A87 /* RealmCollection+Extension.swift */,
-				8E58BDDF2926356600F47A87 /* NotificationManager.swift */,
 				8E58BDE329263E9100F47A87 /* DateFormatterHepler.swift */,
 			);
 			path = Helper;
@@ -301,10 +320,6 @@
 			isa = PBXGroup;
 			children = (
 				8EE66554291A758300A94599 /* PickerTypeEnum.swift */,
-				8EE6655B291BD7A400A94599 /* PaymentCycleEnum.swift */,
-				8E58BDDB29227AD100F47A87 /* CategoryEnum.swift */,
-				8E58BDE129263A7A00F47A87 /* RemindMeEnum.swift */,
-				8E58BDE529266EAD00F47A87 /* CurrencyEnum.swift */,
 			);
 			path = Type;
 			sourceTree = "<group>";
@@ -313,6 +328,10 @@
 			isa = PBXGroup;
 			children = (
 				8EE66562291D3A5400A94599 /* SubscriptionEnum.swift */,
+				8EE6655B291BD7A400A94599 /* PaymentCycleEnum.swift */,
+				8E58BDDB29227AD100F47A87 /* CategoryEnum.swift */,
+				8E58BDE129263A7A00F47A87 /* RemindMeEnum.swift */,
+				8E58BDE529266EAD00F47A87 /* CurrencyEnum.swift */,
 			);
 			path = Type;
 			sourceTree = "<group>";
@@ -415,6 +434,7 @@
 				8EE66563291D3A5500A94599 /* SubscriptionEnum.swift in Sources */,
 				8EE665362916A01000A94599 /* UIView+Extension.swift in Sources */,
 				8E58BDE429263E9100F47A87 /* DateFormatterHepler.swift in Sources */,
+				8E4E8D00292E323B00429EA6 /* UINanigation+ViewControllerExtension.swift in Sources */,
 				8EE6655A291BA86E00A94599 /* UserSubscription.swift in Sources */,
 				8EE665472918EE7700A94599 /* AddSubscriptionViewController.swift in Sources */,
 				8EE6652C29167E5F00A94599 /* RealmDataStore.swift in Sources */,

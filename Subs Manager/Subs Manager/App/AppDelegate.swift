@@ -13,13 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        if UserDefaults.standard.bool(forKey: UserDefaultsKeys.isUserRemembered),
-           UserDefaults.standard.bool(forKey: UserDefaultsKeys.isUserLoggedIn) {
-            self.showScreen(with: "SubscriptionsScreen", viewControllerName: "SubscriptionsScreen")
-        } else {
-            self.showScreen(with: "SignInScreen", viewControllerName: "SignInScreen")
-
-        }
+        setUpNavigationBar()
+        setUpStartScreen()
         return true
     }
 
@@ -34,5 +29,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
     }
 
+    private func setUpNavigationBar() {
+        UINavigationBar.appearance().tintColor = .black
+    }
+
+    private func setUpStartScreen() {
+        if UserDefaults.standard.bool(forKey: UserDefaultsKeys.isUserRemembered),
+           UserDefaults.standard.bool(forKey: UserDefaultsKeys.isUserLoggedIn) {
+            self.showScreen(with: "SubscriptionsScreen", viewControllerName: "SubscriptionsScreen")
+        } else {
+            self.showScreen(with: "SignInScreen", viewControllerName: "SignInScreen")
+        }
+    }
 }
 

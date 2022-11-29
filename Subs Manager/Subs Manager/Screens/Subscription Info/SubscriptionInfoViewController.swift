@@ -38,6 +38,12 @@ class SubscriptionInfoViewController: SetUpKeyboardViewController {
         setUpDatePicker()
         setUpTextFields()
         setUpButton()
+        navigationController?.navigationBar.isHidden = false
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.isHidden = true
     }
 
     private var isEnable: Bool {
@@ -58,7 +64,7 @@ class SubscriptionInfoViewController: SetUpKeyboardViewController {
         return true
     }
 
-    @IBAction func tappedAddButton(_ sender: UIButton) {
+    @IBAction private func tappedAddButton(_ sender: UIButton) {
         if typeOfController == .add {
             addUserSubscription()
         } else {
@@ -125,15 +131,12 @@ class SubscriptionInfoViewController: SetUpKeyboardViewController {
 
     private func moveToSignInScreen() {
         showAlert(alertText: "Something went wrong", alertMessage: "This user is not signed in") { [weak self] in
-            let storyBoard = UIStoryboard(name: "SignInScreen", bundle: nil)
-            let viewController = storyBoard.instantiateViewController(withIdentifier: "SignInScreen")
-            let navigationViewController = UINavigationController(rootViewController: viewController)
-            self?.view.window?.rootViewController = navigationViewController
+            self?.view.window?.rootViewController = self?.viewController(storyboardName: "SignInScreen", identifier: "SignInScreen", isNavigation: true)
             self?.view.window?.makeKeyAndVisible()
         }
     }
 
-    @objc func dateSelected() {
+    @objc private func dateSelected() {
         if let datePicker = paymentDateTextField.inputView as? UIDatePicker {
             paymentDateTextField.text = DateFormatterHepler.getDateString(from: datePicker.date)
         }

@@ -5,7 +5,6 @@
 //  Created by Vlad Birukov on 15.11.2022.
 //
 
-import Foundation
 import RealmSwift
 
 extension RealmCollection {

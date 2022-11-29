@@ -5,7 +5,6 @@
 //  Created by Vlad Birukov on 17.11.2022.
 //
 
-import UIKit
 import RealmSwift
 import UserNotifications
 
@@ -15,7 +14,7 @@ class NotificationManager {
 
     func setupNotifications(model: UserSubscription) {
         if RemindMeEnum.allCases.map({ $0.rawValue }).contains(where: { $0 == model.remindMe }) {
-            self.requestNotificationAuthorization()
+            requestNotificationAuthorization()
             self.userNotificationCenter.getPendingNotificationRequests { [weak self] notifications in
                 DispatchQueue.main.async {
                     if notifications.contains(where: { $0.identifier == model.id.uuidString }) {

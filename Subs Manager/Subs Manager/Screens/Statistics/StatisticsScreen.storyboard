@@ -57,6 +57,7 @@
             <point key="canvasLocation" x="82.608695652173921" y="28.794642857142854"/>
         </scene>
     </scenes>
+    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="statisticsScreen" width="624" height="457"/>
         <systemColor name="systemBackgroundColor">

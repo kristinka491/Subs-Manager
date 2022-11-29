@@ -18,13 +18,12 @@ class AddSubscriptionTableViewCell: UITableViewCell {
         setUpView()
     }
 
-
-    private func setUpView() {
-        subscriptionView.layer.cornerRadius = 20
-    }
-
     func setUpCell(_ subscription: SubscriptionEnum) {
         subscriptionImage.image = subscription.image
         subscriptionNameLabel.text = subscription.rawValue
+    }
+
+    private func setUpView() {
+        subscriptionView.layer.cornerRadius = 20
     }
 }

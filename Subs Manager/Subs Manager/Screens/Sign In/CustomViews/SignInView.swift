@@ -46,17 +46,17 @@ class SignInView: UIView {
         commonInit()
     }
 
-    @IBAction func tappedGetOneButton(_ sender: UIButton) {
+    @IBAction private func tappedGetOneButton(_ sender: UIButton) {
         delegate?.moveToRegistrationScreen()
     }
 
-    @IBAction func tappedSignInButton(_ sender: UIButton) {
+    @IBAction private func tappedSignInButton(_ sender: UIButton) {
         delegate?.moveToSubscriptionsScreen(login: loginTextField.text ?? "",
                                             password: passwordTextField.text ?? "",
                                             isRemembered: isButtonActive)
     }
 
-    @IBAction func tappedRememberMeButton(_ sender: UIButton) {
+    @IBAction private func tappedRememberMeButton(_ sender: UIButton) {
         if isButtonActive {
             rememberMeButton.setImage(UIImage(named: "uncheck"), for: .normal)
         } else {

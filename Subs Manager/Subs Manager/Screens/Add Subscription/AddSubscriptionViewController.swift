@@ -18,6 +18,7 @@ class AddSubscriptionViewController: UIViewController {
         super.viewDidLoad()
         setUpTable()
         setUpSearchBar()
+        navigationController?.navigationBar.isHidden = true
     }
 
     private func setUpTable() {
@@ -50,10 +51,9 @@ extension AddSubscriptionViewController: UITableViewDelegate, UITableViewDataSou
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyBoard = UIStoryboard(name: "SubscriptionInfoScreen", bundle: nil)
-        if let subscriptionInfoViewController = storyBoard.instantiateViewController(withIdentifier: "SubscriptionInfoScreen") as? SubscriptionInfoViewController {
-            subscriptionInfoViewController.setUp(with: filteredData[indexPath.row], typeOfController: .add)
-            navigationController?.pushViewController(subscriptionInfoViewController, animated: true)
+        if let controller = viewController(storyboardName: "SubscriptionInfoScreen", identifier: "SubscriptionInfoScreen") as? SubscriptionInfoViewController {
+            controller.setUp(with: filteredData[indexPath.row], typeOfController: .add)
+            navigationController?.pushViewController(controller, animated: true)
         }
     }
 }

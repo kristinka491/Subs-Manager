@@ -5,7 +5,6 @@
 //  Created by Vlad Birukov on 05.11.2022.
 //
 
-import Foundation
 import RealmSwift
 
 class User: Object {

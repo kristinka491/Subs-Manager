@@ -14,8 +14,8 @@ protocol ToolbarPickerViewDelegate: AnyObject {
 
 class ToolbarPickerView: UIPickerView {
 
-    public private(set) var toolbar: UIToolbar?
-    public weak var toolbarDelegate: ToolbarPickerViewDelegate?
+    private(set) var toolbar: UIToolbar?
+    weak var toolbarDelegate: ToolbarPickerViewDelegate?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -44,11 +44,11 @@ class ToolbarPickerView: UIPickerView {
         self.toolbar = toolBar
     }
 
-    @objc func doneTapped() {
-        self.toolbarDelegate?.didTapDone()
+    @objc private func doneTapped() {
+        toolbarDelegate?.didTapDone()
     }
 
-    @objc func cancelTapped() {
-        self.toolbarDelegate?.didTapCancel()
+    @objc private func cancelTapped() {
+        toolbarDelegate?.didTapCancel()
     }
 }

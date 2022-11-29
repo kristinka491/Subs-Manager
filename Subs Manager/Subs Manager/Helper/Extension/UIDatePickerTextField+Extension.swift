@@ -24,7 +24,7 @@ extension UITextField {
         self.inputAccessoryView = toolBar
     }
 
-    @objc func tapCancel() {
+    @objc private func tapCancel() {
         self.resignFirstResponder()
     }
 }

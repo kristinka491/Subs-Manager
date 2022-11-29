@@ -58,17 +58,15 @@ class SubscriptionsViewController: UIViewController {
     }
 
     @IBAction private func tappedAddButton(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "AddSubscriptionScreen", bundle: nil)
-        let controller = UINavigationController(rootViewController: storyboard.instantiateViewController(withIdentifier: "AddSubscriptionScreen"))
+        let controller = viewController(storyboardName: "AddSubscriptionScreen", identifier: "AddSubscriptionScreen", isNavigation: true)
         controller.modalPresentationStyle = .formSheet
         present(controller, animated: true, completion: nil)
     }
 
     @IBAction private func tappedStatisticsButton(_ sender: UIButton) {
-        let storyBoard = UIStoryboard(name: "StatisticsScreen", bundle: nil)
-        if let statisticsViewController = storyBoard.instantiateViewController(withIdentifier: "StatisticsScreen") as? StatisticsViewController {
-            statisticsViewController.setUp(with: user?.subscriptions.toArray())
-            navigationController?.pushViewController(statisticsViewController, animated: true)
+        if let controller = viewController(storyboardName: "StatisticsScreen", identifier: "StatisticsScreen") as? StatisticsViewController {
+            controller.setUp(with: user?.subscriptions.toArray())
+            navigationController?.pushViewController(controller, animated: true)
         }
     }
 
@@ -159,10 +157,7 @@ class SubscriptionsViewController: UIViewController {
     }
 
     private func moveToSignInScreen() {
-        let storyBoard = UIStoryboard(name: "SignInScreen", bundle: nil)
-        let viewController = storyBoard.instantiateViewController(withIdentifier: "SignInScreen")
-        let navigationViewController = UINavigationController(rootViewController: viewController)
-        view.window?.rootViewController = navigationViewController
+        view.window?.rootViewController = viewController(storyboardName: "SignInScreen", identifier: "SignInScreen", isNavigation: true)
         view.window?.makeKeyAndVisible()
     }
 }

@@ -5,7 +5,7 @@
 //  Created by Vlad Birukov on 09.11.2022.
 //
 
-import Foundation
+import UIKit
 import RealmSwift
 
 class UserSubscription: Object {

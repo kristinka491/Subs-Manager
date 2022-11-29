@@ -17,6 +17,12 @@ class SignUpViewController: SetUpKeyboardViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.isHidden = false
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.isHidden = true
     }
 
     private var isNotEmpty: Bool {
