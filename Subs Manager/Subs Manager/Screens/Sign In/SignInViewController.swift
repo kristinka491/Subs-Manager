@@ -38,7 +38,7 @@ class SignInViewController: SetUpKeyboardViewController {
     private func setupContentHeight() {
         let height = scrollView.frame.height
         greetingView.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: height)
-            signInView.frame = CGRect(x: view.frame.width, y: 0, width: view.frame.size.width, height: height)
+        signInView.frame = CGRect(x: view.frame.width, y: 0, width: view.frame.size.width, height: height)
         scrollView.contentSize = CGSize(width: 2 * view.frame.width, height: height)
     }
 
@@ -52,8 +52,9 @@ class SignInViewController: SetUpKeyboardViewController {
 // MARK: - UIScrollViewDelegate
 
 extension SignInViewController: UIScrollViewDelegate {
+
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        pageControl.currentPage = Int(scrollView.contentOffset.x / CGFloat(414))
+        pageControl.currentPage = Int(scrollView.contentOffset.x / CGFloat(view.frame.size.width))
     }
 }
 
@@ -82,4 +83,3 @@ extension SignInViewController: MoveToAnotherScreenDelegate {
         }
     }
 }
-

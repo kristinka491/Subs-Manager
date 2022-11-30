@@ -1,5 +1,5 @@
 //
-//  UINanigation+ViewControllerExtension.swift
+//  UINavigation+ViewControllerExtension.swift
 //  Subs Manager
 //
 //  Created by Vlad Birukov on 23.11.2022.

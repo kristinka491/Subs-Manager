@@ -18,6 +18,8 @@ class SubscriptionsViewController: UIViewController {
 
     private let realmDataStore = RealmDataStore.shared
     private let notification = NotificationManager()
+    private let numberOfCellsInRow = 2
+    private let spaceBetweenCells = 5
     private var chosenCategory: CategoryEnum?
     private var chosenCurrency: CurrencyEnum = .usd
     private var user: User?
@@ -180,8 +182,6 @@ extension SubscriptionsViewController: UICollectionViewDelegate, UICollectionVie
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let numberOfCellsInRow = 2
-        let spaceBetweenCells = 5
         let screenWidth = UIScreen.main.bounds.width
         let cellWidth = (Int(screenWidth) - spaceBetweenCells * (numberOfCellsInRow + 1)) / numberOfCellsInRow
         return CGSize(width: cellWidth, height: 270)

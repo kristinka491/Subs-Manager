@@ -11,7 +11,6 @@ import UIKit
 class RealmDataStore {
 
     static let shared = RealmDataStore()
-    private init() {}
 
     private let realm = try? Realm()
     private let notification = NotificationManager()

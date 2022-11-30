@@ -12,7 +12,7 @@ class AddSubscriptionViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
 
-    private var filteredData = SubscriptionEnum.allCases    
+    private var filteredData = SubscriptionEnum.allCases
 
     override func viewDidLoad() {
         super.viewDidLoad()

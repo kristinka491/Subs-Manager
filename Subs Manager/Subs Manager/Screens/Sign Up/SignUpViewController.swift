@@ -25,25 +25,13 @@ class SignUpViewController: SetUpKeyboardViewController {
         navigationController?.navigationBar.isHidden = true
     }
 
-    private var isNotEmpty: Bool {
-        if let nameValue = nameTextField.text,
-            let loginValue = loginTextField.text,
-            let passwordValue = passwordTextField.text  {
-            if !nameValue.isEmpty && !loginValue.isEmpty && !passwordValue.isEmpty {
-                return true
-            } else {
-                return false
-            }
-        }
-        return false
-    }
-
     @IBAction private func tappedCreateAccountButton() {
-        if isNotEmpty {
+        if !nameTextField.text.isEmptyOrNil && !loginTextField.text.isEmptyOrNil && !passwordTextField.text.isEmptyOrNil {
             registerUser()
             showAlert(alertText: "Thank you!", alertMessage: "Account was created.") { [weak self] in
                 self?.navigationController?.popViewController(animated: true)
-        }} else {
+            }
+        } else {
             showAlert(alertText: "Error", alertMessage: "Please fill in all the forms", completion: nil)
         }
     }
@@ -54,8 +42,8 @@ class SignUpViewController: SetUpKeyboardViewController {
 
     private func registerUser() {
         let isUserSaved = realmDataStore.addUser(name: nameTextField.text ?? "",
-            login: loginTextField.text ?? "",
-            password: passwordTextField.text ?? "")
+                                                 login: loginTextField.text ?? "",
+                                                 password: passwordTextField.text ?? "")
         if !isUserSaved {
             showAlert(alertText: "Something went wrong", alertMessage: "This user is already signed up") { [weak self] in
                 self?.navigationController?.popViewController(animated: true)

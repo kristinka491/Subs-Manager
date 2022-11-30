@@ -8,7 +8,8 @@
 import UIKit
 
 extension UIView {
-    func setUpView(_ container: UIView) -> Void {
+
+    func setUpView(_ container: UIView) {
         translatesAutoresizingMaskIntoConstraints = false
         frame = container.frame
         container.addSubview(self)

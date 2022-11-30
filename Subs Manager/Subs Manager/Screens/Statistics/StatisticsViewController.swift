@@ -33,7 +33,8 @@ class StatisticsViewController: UIViewController {
     }
 
     private func customizeChart(dataPoints: [String], values: [Double]) {
-        var dataEntries: [ChartDataEntry] = []
+        var dataEntries = [ChartDataEntry]()
+
         for i in 0..<dataPoints.count {
             let dataEntry = PieChartDataEntry(value: values[i],
                                               label: dataPoints[i],
@@ -70,6 +71,6 @@ class StatisticsViewController: UIViewController {
                 colors.append(color)
             }
         }
-    return colors
+        return colors
     }
 }

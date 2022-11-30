@@ -88,7 +88,7 @@ class SubscriptionInfoViewController: SetUpKeyboardViewController {
             if let userSubscription = userSubscription {
                 currencyTextField.text = "\(userSubscription.currency)"
                 amountTextField.text = "\(userSubscription.amount)"
-                paymentDateTextField.text = "\(userSubscription.paymentDate)"
+                paymentDateTextField.text = DateFormatterHepler.getDateString(from: userSubscription.paymentDate)
                 paymentCycleTextField.text = "\(userSubscription.paymentCycle)"
                 remindMeTextField.text = "\(userSubscription.remindMe)"
                 categoryTextField.text = "\(userSubscription.category)"
@@ -173,9 +173,7 @@ class SubscriptionInfoViewController: SetUpKeyboardViewController {
                                                                         paymentDate: paymentDateTextField.text ?? "",
                                                                         remindMe: remindMeTextField.text ?? "",
                                                                         category: categoryTextField.text ?? "")
-        if !userSubscriptionUpdated {
-            
-        } else {
+        if userSubscriptionUpdated {
             showAlert(alertText: "Thank you!", alertMessage: "Changes were saved.") { [weak self] in
                 self?.navigationController?.popViewController(animated: true)
             }
@@ -265,7 +263,7 @@ extension SubscriptionInfoViewController: ToolbarPickerViewDelegate {
 
 extension SubscriptionInfoViewController: UITextFieldDelegate {
 
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool{
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         switch textField {
         case currencyTextField:
             currentSelectedTextFieldType = .currency

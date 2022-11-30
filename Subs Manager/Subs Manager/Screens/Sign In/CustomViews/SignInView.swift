@@ -24,18 +24,6 @@ class SignInView: UIView {
     private var isButtonActive = false
     private let kCONTENT_XIB_NAME = "SignInView"
 
-    private var isNotEmpty: Bool {
-        if let loginValue = loginTextField.text,
-            let passwordValue = passwordTextField.text  {
-            if !loginValue.isEmpty && !passwordValue.isEmpty {
-                return true
-            } else {
-                return false
-            }
-        }
-        return false
-    }
-
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()

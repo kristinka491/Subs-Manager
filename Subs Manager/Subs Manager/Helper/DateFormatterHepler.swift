@@ -7,7 +7,7 @@
 
 import Foundation
 
-class DateFormatterHepler {
+struct DateFormatterHepler {
 
     static func getDateString(from date: Date) -> String {
         return DateFormatterHepler.dateFormatter.string(from: date)
